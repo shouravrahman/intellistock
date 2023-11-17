@@ -1,3 +1,138 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+//reset
+//styles/reset.scss
+
+//Box-sizing reset
+html {
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+//Remove default margin and padding
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+figure,
+blockquote,
+dl,
+dd {
+	margin: 0;
+	padding: 0;
+}
+
+//Remove default list styles
+ul,
+ol {
+	list-style: none;
+}
+
+//Remove default styles for links
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+//Remove default styles for form elements
+button,
+input,
+optgroup,
+select,
+textarea {
+	margin: 0;
+	font: inherit;
+	color: inherit;
+}
+
+//Normalize heading margins
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+	font-size: inherit;
+	font-weight: inherit;
+}
+
+//Remove border when inside a focused fieldset
+button,
+input,
+select,
+textarea {
+	&:focus {
+		outline: 0;
+	}
+}
+img {
+	max-width: 100%;
+	vertical-align: middle;
+	font-style: italic;
+}
+//Additional resets or normalizations can be added as needed
+
+//Flexbox utility classes
+.flex-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.flex-column {
+	display: flex;
+	flex-direction: column;
+}
+
+//Responsive utility classes
+@media (max-width: 768px) {
+	.sm-flex-center {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.sm-flex-column {
+		display: flex;
+		flex-direction: column;
+	}
+}
+
+@media (max-width: 1024px) {
+	.md-flex-center {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.md-flex-column {
+		display: flex;
+		flex-direction: column;
+	}
+}
+
+@media (max-width: 1280px) {
+	.lg-flex-center {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.lg-flex-column {
+		display: flex;
+		flex-direction: column;
+	}
+}
