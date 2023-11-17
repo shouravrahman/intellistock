@@ -1,7 +1,10 @@
 import { Poppins } from "next/font/google";
-import "../styles/main";
+import "../styles/main.scss";
 
-const poppins = Poppins({ subsets: ["latin"] });
+const poppins = Poppins({
+	subsets: ["latin"],
+	weight: ["300", "400", "500", "600", "700"],
+});
 
 export const metadata = {
 	title: "Inventory management web app",
