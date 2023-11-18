@@ -16,6 +16,8 @@ const SubMenuItem = ({ submenuItem }) => (
 			"rounded-md"
 		)}
 	>
+		{" "}
+		<span>{submenuItem.icon}</span>
 		<Link href={submenuItem.href}>{submenuItem.title}</Link>
 	</li>
 );
