@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ChevronDown } from "lucide-react";
 import Icon from "./Icon";
 
-const MenuItem = ({ menu, open, subMenuOpen, setSubMenuOpen }) => (
+const MenuItem = ({ menu, open, subMenuOpen, toggleSubMenu }) => (
 	<li
 		className={clsx(
 			"text-white",
@@ -14,7 +14,7 @@ const MenuItem = ({ menu, open, subMenuOpen, setSubMenuOpen }) => (
 			"gap-x-8",
 			"cursor-pointer",
 			"p-2",
-			"hover:bg-purple-500",
+			"hover:bg-slate-800",
 			"rounded-md",
 			menu.spacing ? "mt-12" : "mt-3"
 		)}
@@ -34,7 +34,7 @@ const MenuItem = ({ menu, open, subMenuOpen, setSubMenuOpen }) => (
 		</Link>
 		{menu.submenu && open && (
 			<ChevronDown
-				onClick={() => setSubMenuOpen(!subMenuOpen)}
+				onClick={toggleSubMenu}
 				className={clsx(
 					"flex-1",
 					"duration-300",

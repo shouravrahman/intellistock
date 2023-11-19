@@ -1,70 +1,95 @@
 "use client";
-import React, { useState } from "react";
+import { useState } from "react";
 import clsx from "clsx";
 import {
 	ArrowLeft,
-	BookOpen,
-	FolderDot,
-	FolderKanban,
-	GalleryHorizontalEnd,
-	Inbox,
-	Kanban,
-	LayoutDashboard,
+	BadgeDollarSign,
+	BaggageClaim,
+	BarChart4,
+	Blocks,
+	FileText,
+	Home,
 	ScanSearch,
-	Settings,
-	User2,
+	Wallet,
 	Warehouse,
 } from "lucide-react";
 import MenuItem from "./MenuItem";
 import SubMenuItem from "./SubmenuItem";
+import SubscriptionCard from "../SubscriptionCard";
+import useSidebarState from "./state/sidebarState";
 
 const Sidebar = () => {
-	// ... (unchanged code)
-	const [open, setOpen] = useState(false);
+	const { open, setOpen } = useSidebarState();
 	const [subMenuOpen, setSubMenuOpen] = useState(false);
 
+	const toggleSubMenu = (idx) => {
+		setSubMenuOpen((prevSubMenuOpen) => ({
+			...prevSubMenuOpen,
+			[idx]: !prevSubMenuOpen[idx],
+		}));
+	};
 	const MenuData = [
-		{ title: "Home", href: "/", icon: <LayoutDashboard /> },
-		{ title: "Inventory", href: "/", icon: <BookOpen />, spacing: true },
-		{ title: "Sales", href: "/", icon: <GalleryHorizontalEnd /> },
+		{ title: "Home", href: "/", icon: <Home /> },
+
 		{
-			title: "Projects",
+			title: "Inventory",
 			submenu: true,
 			submenuItems: [
-				{ title: "Project 1", href: "/", icon: <FolderDot /> },
-				{ title: "Project 2", href: "/", icon: <FolderDot /> },
+				{ title: "Project 1", href: "/" },
+				{ title: "Project 2", href: "/" },
 			],
 			href: "/",
-			icon: <FolderKanban />,
+			icon: <BaggageClaim />,
 		},
-		{ title: "Analytics", href: "/", icon: <Kanban />, spacing: true },
-		{ title: "Reports", href: "/", icon: <Inbox /> },
-		{ title: "Profile", href: "/", icon: <User2 /> },
-		{ title: "Setting", href: "/", icon: <Settings /> },
+		{
+			title: "Sales",
+			submenu: true,
+			submenuItems: [
+				{ title: "Project 1", href: "/" },
+				{ title: "Project 2", href: "/" },
+			],
+			href: "/",
+			icon: <Wallet />,
+		},
+		{
+			title: "Purchases",
+			submenu: true,
+			submenuItems: [
+				{ title: "Project 1", href: "/" },
+				{ title: "Project 2", href: "/" },
+			],
+			href: "/",
+			icon: <BadgeDollarSign />,
+		},
+
+		{ title: "Integrations", href: "/", icon: <Blocks /> },
+		{ title: "Reports", href: "/", icon: <BarChart4 /> },
+		{ title: "Documents", href: "/", icon: <FileText /> },
 	];
 
 	const containerClasses = clsx(
-		"bg-purple-950",
+		"sidebar-bg",
 		"p-5",
 		"pt-8",
 		"min-h-screen",
-		open ? "w-full" : "w-20",
-		"relative",
+		open ? "w-64" : "w-20",
+		"fixed",
 		"transition-all",
-		"ease-in",
-		"duration-200"
+		"ease-in-out",
+		"duration-600"
 	);
 
 	const arrowClasses = clsx(
-		"bg-white",
+		"bg-slate-900",
 		"h-9",
 		"w-9",
-		"text-purple-950",
+		"text-white",
 		"rounded-full",
 		"absolute",
 		"-right-4",
 		"bottom-9",
 		"border",
+		"border-white",
 		"outline-none",
 		"border-purple-800",
 		"cursor-pointer",
@@ -79,7 +104,7 @@ const Sidebar = () => {
 		"rounded",
 		"p-1",
 		"cursor-pointer",
-		"duration-500",
+		"duration-300",
 		"ease-in",
 		"mr-2",
 		open && "rotate-[360deg]"
@@ -89,6 +114,7 @@ const Sidebar = () => {
 		"text-white",
 		"origin-left",
 		"font-medium",
+		"text-2xl",
 		!open && "scale-0",
 		"duration-300",
 		"ease-in"
@@ -111,9 +137,15 @@ const Sidebar = () => {
 
 	return (
 		<div className={containerClasses}>
-			<ArrowLeft className={arrowClasses} onClick={() => setOpen(!open)} />
+			<ArrowLeft
+				className={arrowClasses}
+				onClick={() => {
+					setOpen(!open);
+					setSubMenuOpen({});
+				}}
+			/>
 
-			<div className='inline-flex justify-between items-center'>
+			<div className='inline-flex gap-6'>
 				<Warehouse className={warehouseClasses} />
 				<h1 className={titleClasses}>Inventory</h1>
 			</div>
@@ -146,20 +178,22 @@ const Sidebar = () => {
 						<MenuItem
 							menu={menu}
 							open={open}
-							subMenuOpen={subMenuOpen}
-							setSubMenuOpen={setSubMenuOpen}
+							subMenuOpen={subMenuOpen[idx]}
+							toggleSubMenu={() => toggleSubMenu(idx)}
 						/>
 
-						{menu.submenu && subMenuOpen && open && (
+						{menu.submenu && subMenuOpen[idx] && open && (
 							<ul>
-								{menu.submenuItems.map((submenuItem, idx) => (
-									<SubMenuItem key={idx} submenuItem={submenuItem} />
+								{menu.submenuItems.map((submenuItem, subIdx) => (
+									<SubMenuItem key={subIdx} submenuItem={submenuItem} />
 								))}
 							</ul>
 						)}
 					</div>
 				))}
 			</ul>
+
+			<SubscriptionCard open={open} />
 		</div>
 	);
 };

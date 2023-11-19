@@ -4,9 +4,7 @@ import {
 	History,
 	LayoutGrid,
 	Plus,
-	PlusSquare,
 	Settings,
-	Settings2,
 	User2,
 } from "lucide-react";
 import React from "react";
@@ -15,7 +13,7 @@ import Image from "next/image";
 
 const Header = () => {
 	return (
-		<div className='bg-slate-100 h-16 flex items-center justify-between px-8 border-b border-slate-200 shadow-sm'>
+		<div className='inventory-dashboard-header-bg  h-16 flex items-center justify-between px-8 border-b border-slate-200 shadow-sm'>
 			{/* left segment */}
 			<div className='flex gap-3'>
 				{/* activities icon */}
