@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import clsx from "clsx";
 import {
-	ArrowLeftFromLine,
+	ArrowLeft,
 	BookOpen,
 	FolderDot,
 	FolderKanban,
@@ -24,9 +24,9 @@ const Sidebar = () => {
 	const [subMenuOpen, setSubMenuOpen] = useState(false);
 
 	const MenuData = [
-		{ title: "Dashboard", href: "/", icon: <LayoutDashboard /> },
-		{ title: "Pages", href: "/", icon: <BookOpen />, spacing: true },
-		{ title: "Media", href: "/", icon: <GalleryHorizontalEnd /> },
+		{ title: "Home", href: "/", icon: <LayoutDashboard /> },
+		{ title: "Inventory", href: "/", icon: <BookOpen />, spacing: true },
+		{ title: "Sales", href: "/", icon: <GalleryHorizontalEnd /> },
 		{
 			title: "Projects",
 			submenu: true,
@@ -38,7 +38,7 @@ const Sidebar = () => {
 			icon: <FolderKanban />,
 		},
 		{ title: "Analytics", href: "/", icon: <Kanban />, spacing: true },
-		{ title: "Inbox", href: "/", icon: <Inbox /> },
+		{ title: "Reports", href: "/", icon: <Inbox /> },
 		{ title: "Profile", href: "/", icon: <User2 /> },
 		{ title: "Setting", href: "/", icon: <Settings /> },
 	];
@@ -47,7 +47,8 @@ const Sidebar = () => {
 		"bg-purple-950",
 		"p-5",
 		"pt-8",
-		open ? "w-80" : "w-20",
+		"min-h-screen",
+		open ? "w-full" : "w-20",
 		"relative",
 		"transition-all",
 		"ease-in",
@@ -61,8 +62,8 @@ const Sidebar = () => {
 		"text-purple-950",
 		"rounded-full",
 		"absolute",
-		"-right-6",
-		"top-9",
+		"-right-4",
+		"bottom-9",
 		"border",
 		"outline-none",
 		"border-purple-800",
@@ -110,10 +111,7 @@ const Sidebar = () => {
 
 	return (
 		<div className={containerClasses}>
-			<ArrowLeftFromLine
-				className={arrowClasses}
-				onClick={() => setOpen(!open)}
-			/>
+			<ArrowLeft className={arrowClasses} onClick={() => setOpen(!open)} />
 
 			<div className='inline-flex justify-between items-center'>
 				<Warehouse className={warehouseClasses} />
