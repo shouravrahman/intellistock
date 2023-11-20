@@ -18,7 +18,7 @@ const Header = () => {
 			<div className='flex gap-3'>
 				{/* activities icon */}
 				<button>
-					<History className='w-6 h-6' />
+					<History className='w-6 h-6 text-white' />
 				</button>
 				{/* search */}
 				<SearchInput />
@@ -44,7 +44,7 @@ const Header = () => {
 							Profile
 						</span>
 						<button className=' rounded-lg '>
-							<User2 className='h-6 w-6 ' />
+							<User2 className='h-6 w-6 text-white' />
 						</button>
 					</div>
 					<div className='has-tooltip  '>
@@ -52,7 +52,7 @@ const Header = () => {
 							Notifications
 						</span>
 						<button className=' rounded-lg'>
-							<BellDot className='h-6 w-6 ' />
+							<BellDot className='h-6 w-6 text-white' />
 						</button>
 					</div>
 					<div className='has-tooltip border-r border-gray-300 pr-3'>
@@ -60,7 +60,7 @@ const Header = () => {
 							Notifications
 						</span>
 						<button className='rounded-lg'>
-							<Settings className='h-6 w-6 ' />
+							<Settings className='h-6 w-6 text-white' />
 						</button>
 					</div>
 				</div>
@@ -69,9 +69,9 @@ const Header = () => {
 
 				<div className='flex gap-3 pl-3 items-center'>
 					{/* name dropdown */}
-					<button className='flex items-center'>
+					<button className='flex items-center text-white'>
 						<span>Mike</span>
-						<ChevronDown className='w-4 h-4' />
+						<ChevronDown className='w-4 h-4 text-white' />
 					</button>
 
 					<button>
@@ -80,11 +80,11 @@ const Header = () => {
 							height={96}
 							alt='user image'
 							src={`https://avatars.githubusercontent.com/u/73746355?v=4`}
-							className='w-6 h-6 rounded-full border border-slate-800'
+							className='w-8 h-8 rounded-full border-2 border-white outline-none'
 						/>
 					</button>
 					<button className=''>
-						<LayoutGrid className='w-6 h-6 text-slate-900' />
+						<LayoutGrid className='w-6 h-6  text-white' />
 					</button>
 				</div>
 			</div>
