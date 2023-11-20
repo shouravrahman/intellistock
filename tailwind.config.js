@@ -8,8 +8,8 @@ module.exports = {
 	theme: {
 		extend: {
 			fontFamily: {
-				body: ["Poppins", "sans-serif"], // Example font stack, replace with your fonts
-				custom: ["YourCustomFont", "sans-serif"], // Add your custom font stack here
+				sans: ["var(--font-inter)"],
+				mono: ["var(--font-roboto-mono)"],
 			},
 			fontSize: {
 				sm: "0.875rem",
