@@ -14,7 +14,7 @@ const MenuItem = ({ menu, open, subMenuOpen, toggleSubMenu }) => (
 			"gap-x-8",
 			"cursor-pointer",
 			"p-2",
-			"hover:bg-slate-800",
+			"hover:bg-[hsla(0,0%,100%,.07)]",
 			"rounded-md",
 			menu.spacing ? "mt-12" : "mt-3"
 		)}
