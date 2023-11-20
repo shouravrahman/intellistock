@@ -1,9 +1,16 @@
-import { Poppins } from "next/font/google";
+import { Inter, Roboto_Mono } from "next/font/google";
 import "../styles/main.scss";
 
-const poppins = Poppins({
+const inter = Inter({
 	subsets: ["latin"],
-	weight: ["300", "400", "500", "600", "700"],
+	display: "swap",
+	variable: "--font-inter",
+});
+
+const roboto_mono = Roboto_Mono({
+	subsets: ["latin"],
+	display: "swap",
+	variable: "--font-roboto-mono",
 });
 
 export const metadata = {
@@ -14,7 +21,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
 	return (
 		<html lang='en'>
-			<body className={poppins.className}>{children}</body>
+			<body className={`${inter.variable} ${roboto_mono.variable} font-sans`}>
+				{children}
+			</body>
 		</html>
 	);
 }
