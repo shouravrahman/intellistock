@@ -16,7 +16,7 @@ const SubscriptionCard = ({ open }) => {
 				<hr className='border-t border-orange-400 mt-2' />
 
 				<div className='flex  text-sm'>
-					<button className='px-2 pt-1 border-r border-orange-400 hover:bg-slate-800'>
+					<button className='px-2 pt-2 border-r border-orange-400 hover:bg-slate-800'>
 						Change Plan
 					</button>
 					<Link className='px-2 pt-2 hover:bg-slate-800' href='/'>
