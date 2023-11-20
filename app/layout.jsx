@@ -1,16 +1,17 @@
-import { Inter, Roboto_Mono } from "next/font/google";
+import { Rubik, Noto_Sans } from "next/font/google";
 import "../styles/main.scss";
 
-const inter = Inter({
+const noto = Noto_Sans({
 	subsets: ["latin"],
 	display: "swap",
-	variable: "--font-inter",
+	weight: ["400", "500", "600", "700"],
+	variable: "--font-noto",
 });
 
-const roboto_mono = Roboto_Mono({
+const rubik = Rubik({
 	subsets: ["latin"],
 	display: "swap",
-	variable: "--font-roboto-mono",
+	variable: "--font-rubik",
 });
 
 export const metadata = {
@@ -21,7 +22,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
 	return (
 		<html lang='en'>
-			<body className={`${inter.variable} ${roboto_mono.variable} font-sans`}>
+			<body className={`${noto.variable} ${rubik.variable} font-sans`}>
 				{children}
 			</body>
 		</html>
