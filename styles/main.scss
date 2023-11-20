@@ -155,11 +155,24 @@ img {
 	);
 }
 .inventory-dashboard-header-bg {
-	background: rgb(174, 189, 226);
+	// background: rgb(174, 189, 226);
+	// background: linear-gradient(
+	// 	90deg,
+	// 	rgba(174, 189, 226, 1) 22%,
+	// 	rgba(215, 165, 255, 0.8519782913165266) 53%,
+	// 	rgba(237, 217, 217, 1) 100%
+	// );
+	background: rgb(15, 23, 42);
 	background: linear-gradient(
-		90deg,
-		rgba(174, 189, 226, 1) 22%,
-		rgba(215, 165, 255, 0.8519782913165266) 53%,
-		rgba(237, 217, 217, 1) 100%
+		190deg,
+		rgba(15, 23, 42, 1) 0%,
+		rgba(17, 0, 31, 1) 39%,
+		rgba(52, 52, 52, 1) 100%
 	);
+}
+.header-bg {
+	background-image: url("/circuit.png");
+	background-size: contain;
+	// background-repeat: no-repeat;
+	background-position: center center;
 }
