@@ -6,7 +6,7 @@ import React from "react";
 import Poppins from "next/font/google";
 const Layout = ({ children }) => {
 	return (
-		<main className='font-sans font-medium'>
+		<main className='font-noto font-medium h-screen bg-teal-100'>
 			<HomeNavbar />
 			{children}
 		</main>
