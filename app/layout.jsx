@@ -4,7 +4,7 @@ import "../styles/main.scss";
 const noto = Noto_Sans({
 	subsets: ["latin"],
 	display: "swap",
-	weight: ["400", "500", "600", "700"],
+	weight: ["500", "600", "700"],
 	variable: "--font-noto",
 });
 
@@ -22,7 +22,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
 	return (
 		<html lang='en'>
-			<body className={`${noto.variable} ${rubik.variable} font-sans`}>
+			<body
+				className={`${noto.variable} ${rubik.variable} font-sans bg-teal-100`}
+			>
 				{children}
 			</body>
 		</html>
