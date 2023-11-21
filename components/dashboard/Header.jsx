@@ -38,7 +38,7 @@ const Header = () => {
 				</div>
 
 				{/* 3 icons */}
-				<div className='flex gap-3 items-center pl-3'>
+				<div className='flex justify-center gap-4 items-center pl-3'>
 					<div className='has-tooltip  '>
 						<span className='tooltip rounded shadow-lg py-1 px-2 bg-black text-white mt-10'>
 							Profile
@@ -67,7 +67,7 @@ const Header = () => {
 
 				{/* dropdown ,avatar,apps */}
 
-				<div className='flex gap-3 pl-3 items-center'>
+				<div className='flex gap-3 pl-3 items-center justify-center'>
 					{/* name dropdown */}
 					<button className='flex items-center text-white'>
 						<span>Mike</span>
