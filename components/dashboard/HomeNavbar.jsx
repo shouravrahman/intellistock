@@ -32,7 +32,7 @@ const HomeNavbar = () => {
 						<Link
 							key={idx}
 							href={item.href}
-							className={`py-[1px] font-rubik font-semibold  mt-2  ${
+							className={`py-[1px] font-noto font-normal  mt-2  ${
 								pathname === item.href
 									? "border-b-4 border-black transition-all ease-in z-10"
 									: ""
