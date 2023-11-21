@@ -1,23 +1,12 @@
 "use client";
 import { useState } from "react";
 import clsx from "clsx";
-import {
-	ArrowLeft,
-	BadgeDollarSign,
-	BaggageClaim,
-	BarChart4,
-	Blocks,
-	FileText,
-	Home,
-	ScanSearch,
-	Wallet,
-	Warehouse,
-} from "lucide-react";
+import { ArrowLeft, ScanSearch, Warehouse } from "lucide-react";
 import MenuItem from "./MenuItem";
 import SubMenuItem from "./SubmenuItem";
 import SubscriptionCard from "../SubscriptionCard";
 import useSidebarState from "./state/sidebarState";
-
+import { MenuData } from "@/constants/sidebarData";
 const Sidebar = () => {
 	const { open, setOpen } = useSidebarState();
 	const [subMenuOpen, setSubMenuOpen] = useState(false);
@@ -28,49 +17,12 @@ const Sidebar = () => {
 			[idx]: !prevSubMenuOpen[idx],
 		}));
 	};
-	const MenuData = [
-		{ title: "Home", href: "/", icon: <Home /> },
-
-		{
-			title: "Inventory",
-			submenu: true,
-			submenuItems: [
-				{ title: "Project 1", href: "/" },
-				{ title: "Project 2", href: "/" },
-			],
-			href: "/",
-			icon: <BaggageClaim />,
-		},
-		{
-			title: "Sales",
-			submenu: true,
-			submenuItems: [
-				{ title: "Project 1", href: "/" },
-				{ title: "Project 2", href: "/" },
-			],
-			href: "/",
-			icon: <Wallet />,
-		},
-		{
-			title: "Purchases",
-			submenu: true,
-			submenuItems: [
-				{ title: "Project 1", href: "/" },
-				{ title: "Project 2", href: "/" },
-			],
-			href: "/",
-			icon: <BadgeDollarSign />,
-		},
-
-		{ title: "Integrations", href: "/", icon: <Blocks /> },
-		{ title: "Reports", href: "/", icon: <BarChart4 /> },
-		{ title: "Documents", href: "/", icon: <FileText /> },
-	];
 
 	const containerClasses = clsx(
 		"sidebar-bg",
 		"p-5",
 		"pt-8",
+		"overflow-hidden",
 		"min-h-screen",
 		open ? "w-64" : "w-20",
 		"fixed",
@@ -83,6 +35,7 @@ const Sidebar = () => {
 		"bg-slate-900",
 		"h-9",
 		"w-9",
+		"z-10",
 		"text-white",
 		"rounded-full",
 		"absolute",
@@ -183,7 +136,7 @@ const Sidebar = () => {
 						/>
 
 						{menu.submenu && subMenuOpen[idx] && open && (
-							<ul>
+							<ul className='pt-2'>
 								{menu.submenuItems.map((submenuItem, subIdx) => (
 									<SubMenuItem key={subIdx} submenuItem={submenuItem} />
 								))}
