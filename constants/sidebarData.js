@@ -27,11 +27,34 @@ export const MenuData = [
 		title: "Inventory",
 		submenu: true,
 		submenuItems: [
-			{ title: "Items", href: "/dashboard/inventory", icon: <ListChecks /> },
-			{ title: "Item Groups", href: "/dashboard/inventory", icon: <Boxes /> },
+			{
+				title: "Items",
+				href: "/dashboard/inventory",
+				icon: <ListChecks />,
+			},
+			{
+				title: "Categories",
+				href: "/dashboard/inventory",
+				icon: <Boxes />,
+			},
+			{
+				title: "Brands",
+				href: "/dashboard/inventory",
+				icon: <Boxes />,
+			},
+			{
+				title: "Units",
+				href: "/dashboard/inventory",
+				icon: <Boxes />,
+			},
+			{
+				title: "Warehouse",
+				href: "/dashboard/inventory",
+				icon: <Boxes />,
+			},
 			{ title: "Inventory Adjustments", href: "#", icon: <Diff /> },
 		],
-		href: "#",
+		href: "/dashboard/inventory",
 		icon: <BaggageClaim />,
 	},
 	{
