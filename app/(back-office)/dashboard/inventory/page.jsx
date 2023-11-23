@@ -18,6 +18,7 @@ const Inventory = () => {
 							linkTitle={item.linkTitle}
 							href={item.href}
 							img={item.img}
+							enabled={item.enabled}
 						/>
 					);
 				})}
