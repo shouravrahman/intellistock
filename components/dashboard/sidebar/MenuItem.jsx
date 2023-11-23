@@ -11,7 +11,7 @@ const MenuItem = ({ menu, open, subMenuOpen, toggleSubMenu }) => {
 	return (
 		<li
 			className={clsx(
-				"text-white",
+				"text-vercel-white",
 				"text-sm",
 				"flex",
 				"items-center",
@@ -19,8 +19,9 @@ const MenuItem = ({ menu, open, subMenuOpen, toggleSubMenu }) => {
 				"gap-x-8",
 				"cursor-pointer",
 				"p-2",
-				pathname === menu.href ? "bg-[hsla(0,0%,100%,.07)]" : "",
-				"hover:bg-[hsla(0,0%,100%,.07)]",
+				"hover:bg-vercel-hover",
+				pathname === menu.href && "bg-vercel-hover",
+
 				"rounded-md",
 				menu.spacing ? "mt-12" : "mt-3"
 			)}

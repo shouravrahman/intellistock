@@ -18,7 +18,7 @@ const Header = () => {
 			<div className='flex gap-3'>
 				{/* activities icon */}
 				<button>
-					<History className='w-6 h-6 text-white' />
+					<History className='w-6 h-6 text-vercel-white' />
 				</button>
 				{/* search */}
 				<SearchInput />
@@ -29,38 +29,38 @@ const Header = () => {
 				{/* plus icon */}
 
 				<div className='has-tooltip pr-3 border-r border-gray-300'>
-					<span className='tooltip rounded shadow-lg py-1 px-2 bg-purple-700 text-white mt-10'>
+					<span className='tooltip rounded shadow-lg py-1 px-2 bg-purple-700 text-vercel-white mt-10'>
 						Create
 					</span>
 					<button className=' rounded-lg bg-purple-600'>
-						<Plus className='h-8 w-8 p-1 text-white' />
+						<Plus className='h-8 w-8 p-1 text-vercel-white' />
 					</button>
 				</div>
 
 				{/* 3 icons */}
 				<div className='flex justify-center gap-4 items-center pl-3'>
 					<div className='has-tooltip  '>
-						<span className='tooltip rounded shadow-lg py-1 px-2 bg-black text-white mt-10'>
+						<span className='tooltip rounded shadow-lg py-1 px-2 bg-black text-vercel-white mt-10'>
 							Profile
 						</span>
 						<button className=' rounded-lg '>
-							<User2 className='h-6 w-6 text-white' />
+							<User2 className='h-6 w-6 text-vercel-white' />
 						</button>
 					</div>
 					<div className='has-tooltip  '>
-						<span className='tooltip rounded shadow-lg py-1 px-2 bg-black  text-white mt-10'>
+						<span className='tooltip rounded shadow-lg py-1 px-2 bg-black  text-vercel-white mt-10'>
 							Notifications
 						</span>
 						<button className=' rounded-lg'>
-							<BellDot className='h-6 w-6 text-white' />
+							<BellDot className='h-6 w-6 text-vercel-white' />
 						</button>
 					</div>
 					<div className='has-tooltip border-r border-gray-300 pr-3'>
-						<span className='tooltip rounded shadow-lg py-1 px-2 bg-black  text-white mt-10'>
+						<span className='tooltip rounded shadow-lg py-1 px-2 bg-black  text-vercel-white mt-10'>
 							Notifications
 						</span>
 						<button className='rounded-lg'>
-							<Settings className='h-6 w-6 text-white' />
+							<Settings className='h-6 w-6 text-vercel-white' />
 						</button>
 					</div>
 				</div>
@@ -69,9 +69,9 @@ const Header = () => {
 
 				<div className='flex gap-3 pl-3 items-center justify-center'>
 					{/* name dropdown */}
-					<button className='flex items-center text-white'>
+					<button className='flex items-center text-vercel-white'>
 						<span>Mike</span>
-						<ChevronDown className='w-4 h-4 text-white' />
+						<ChevronDown className='w-4 h-4 text-vercel-white' />
 					</button>
 
 					<button>
@@ -84,7 +84,7 @@ const Header = () => {
 						/>
 					</button>
 					<button className=''>
-						<LayoutGrid className='w-6 h-6  text-white' />
+						<LayoutGrid className='w-6 h-6  text-vercel-white' />
 					</button>
 				</div>
 			</div>

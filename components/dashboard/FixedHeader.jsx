@@ -19,10 +19,10 @@ const FixedHeader = ({ href }) => {
 
 				<Link
 					href={href}
-					className='flex-between px-3 py-2  rounded-md bg-purple-600'
+					className='flex-between px-3 py-2  rounded-md bg-purple-900'
 				>
-					<Plus className='h-6 w-6 text-white' />
-					<span className=' text-white ml-2'>New</span>
+					<Plus className='h-6 w-6 text-vercel-white' />
+					<span className=' text-vercel-white ml-2'>New</span>
 				</Link>
 
 				{/* layout button */}
@@ -40,7 +40,7 @@ const FixedHeader = ({ href }) => {
 					<MoreHorizontal className='w-4 h-4' />
 				</button>
 				{/* help button */}
-				<button className='p-2 bg-orange-600 text-white rounded-md'>
+				<button className='p-2 bg-orange-600 text-vercel-white rounded-md'>
 					<HelpCircle className='w-5 h-5' />
 				</button>
 			</div>

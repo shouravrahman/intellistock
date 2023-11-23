@@ -20,9 +20,8 @@ const Sidebar = () => {
 
 	const containerClasses = clsx(
 		"sidebar-bg",
-		"p-5",
+		"p-4",
 		"pt-8",
-		"overflow-hidden",
 		"min-h-screen",
 		open ? "w-64" : "w-20",
 		"fixed",
@@ -32,11 +31,11 @@ const Sidebar = () => {
 	);
 
 	const arrowClasses = clsx(
-		"bg-slate-900",
+		"bg-vercel-black",
 		"h-9",
 		"w-9",
 		"z-10",
-		"text-white",
+		"text-vercel-white",
 		"rounded-full",
 		"absolute",
 		"-right-4",
@@ -64,7 +63,7 @@ const Sidebar = () => {
 	);
 
 	const titleClasses = clsx(
-		"text-white",
+		"text-vercel-white",
 		"origin-left",
 		"font-medium",
 		"text-2xl",
@@ -80,7 +79,7 @@ const Sidebar = () => {
 		"bg-opacity-40",
 		"py-1",
 		"rounded-lg",
-		"text-white",
+		"text-vercel-white",
 		"ml-1",
 		"placeholder-white",
 		"focus:outline-none",

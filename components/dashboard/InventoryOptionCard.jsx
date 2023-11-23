@@ -14,7 +14,6 @@ const InventoryOptionCard = ({
 	enabled,
 	img,
 }) => {
-	console.log(img);
 	return (
 		<div className='shadow-lg bg-white flex-center flex-col gap-4 p-6 rounded'>
 			<h2 className='text-2xl font-bold'>{title}</h2>
@@ -25,12 +24,12 @@ const InventoryOptionCard = ({
 			{enabled ? (
 				<Link
 					href={href}
-					className='px-3 py-2 rounded-md inline-flex items-center bg-purple-600 text-white'
+					className='px-3 py-2 rounded-md inline-flex items-center bg-vercel-black text-vercel-white'
 				>
 					{linkTitle}
 				</Link>
 			) : (
-				<button className='px-3 py-2 rounded-md inline-flex items-center text-white bg-purple-600'>
+				<button className='px-3 py-2 rounded-md inline-flex items-center text-vercel-white bg-vercel-black'>
 					Enable
 				</button>
 			)}

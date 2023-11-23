@@ -10,7 +10,7 @@ const SubMenuItem = ({ submenuItem }) => {
 	return (
 		<li
 			className={clsx(
-				"text-white",
+				"text-vercel-white",
 
 				"flex-between",
 				"ml-4",
@@ -18,11 +18,9 @@ const SubMenuItem = ({ submenuItem }) => {
 				"gap-x-8",
 				"cursor-pointer",
 				"p-2",
+				"hover:bg-vercel-hover",
 				// "ml-10",
-				pathname === submenuItem.href
-					? "bg-[hsla(0,0%,100%,.07)]"
-					: "bg-[hsla(0,0%,100%,.02)]",
-				"hover:bg-[hsla(0,0%,100%,.07)]",
+				pathname === submenuItem.href && "bg-vercel-hover",
 				"rounded-md"
 			)}
 		>
