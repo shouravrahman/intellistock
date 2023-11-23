@@ -25,7 +25,7 @@ export default function RootLayout({ children }) {
 			<body
 				className={`${noto.variable} ${rubik.variable} font-sans bg-teal-100`}
 			>
-				{children}
+				<main>{children}</main>
 			</body>
 		</html>
 	);
