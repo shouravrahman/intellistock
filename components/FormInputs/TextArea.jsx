@@ -1,0 +1,38 @@
+import React from "react";
+
+const TextArea = ({
+	name,
+	label,
+	register,
+	isRequired = true,
+	errors,
+	className = "sm:col-span-2",
+	...rest
+}) => {
+	return (
+		<div className={`${className} mt-4`}>
+			<label
+				htmlFor={name}
+				className='block mb-2 text-base font-medium text-gray-900 leading-6'
+			>
+				{label}
+			</label>
+			<textarea
+				rows={5}
+				name={name}
+				id={name}
+				className={`w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg ${
+					errors && errors[name] ? "border-red-500" : ""
+				}`}
+				placeholder={label}
+				{...register(name)}
+				{...rest}
+			/>
+			{errors && errors[name] && (
+				<p className='text-red-500 text-sm'>{errors[name].message}</p>
+			)}
+		</div>
+	);
+};
+
+export default TextArea;
