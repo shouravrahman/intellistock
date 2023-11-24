@@ -1,10 +1,8 @@
 "use client";
 
 import React from "react";
-import { Shirt } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-// import Icon from "./sidebar/Icon";
 
 const InventoryOptionCard = ({
 	title,
@@ -15,7 +13,7 @@ const InventoryOptionCard = ({
 	img,
 }) => {
 	return (
-		<div className='shadow-lg bg-white flex-center flex-col gap-4 p-6 rounded'>
+		<div className='shadow-lg bg-white flex-center flex-col gap-4 p-6 rounded-lg'>
 			<h2 className='text-2xl font-bold'>{title}</h2>
 			<div>
 				<Image src={img} width={120} height={120} alt={title} />
@@ -24,12 +22,12 @@ const InventoryOptionCard = ({
 			{enabled ? (
 				<Link
 					href={href}
-					className='px-3 py-2 rounded-md inline-flex items-center bg-vercel-black text-vercel-white'
+					className='px-3 py-2 rounded-md inline-flex items-center bg-vercel-black hover:bg-[#222] text-vercel-white'
 				>
 					{linkTitle}
 				</Link>
 			) : (
-				<button className='px-3 py-2 rounded-md inline-flex items-center text-vercel-white bg-vercel-black'>
+				<button className='px-3 py-2 rounded-md inline-flex items-center text-vercel-white bg-vercel-black hover:bg-[#222]'>
 					Enable
 				</button>
 			)}

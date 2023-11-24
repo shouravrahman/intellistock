@@ -5,7 +5,7 @@ export const optionsData = [
 		linkTitle: "New Item",
 		href: "/dashboard/inventory/items/new",
 		enabled: true,
-		img: "/tshirt.svg",
+		img: "/items.svg",
 	},
 	{
 		title: "Units",
@@ -13,7 +13,7 @@ export const optionsData = [
 		linkTitle: "New Unit",
 		href: "/dashboard/inventory/units/new",
 		enabled: true,
-		img: "/group.svg",
+		img: "/units.svg",
 	},
 	{
 		title: "Categories",
@@ -21,7 +21,7 @@ export const optionsData = [
 		linkTitle: "New Category",
 		href: "/dashboard/inventory/categories/new",
 		enabled: true,
-		img: "/wardrobe.svg",
+		img: "/category.svg",
 	},
 	{
 		title: "Brands",
@@ -29,7 +29,7 @@ export const optionsData = [
 		linkTitle: "New Brand",
 		href: "/dashboard/inventory/brands/new",
 		enabled: true,
-		img: "/list.svg",
+		img: "/brands.svg",
 	},
 	{
 		title: "Warehouse",
@@ -37,6 +37,14 @@ export const optionsData = [
 		linkTitle: "New Warehouse",
 		href: "/dashboard/inventory/warehouse/new",
 		enabled: true,
-		img: "/list.svg",
+		img: "/warehouse.svg",
+	},
+	{
+		title: "Inventory Adjustments",
+		description: "Transfer stock from the main warehouse",
+		linkTitle: "New Adjustment",
+		href: "/dashboard/inventory/adjustments/new",
+		enabled: true,
+		img: "/adjustments.svg",
 	},
 ];

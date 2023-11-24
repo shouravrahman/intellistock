@@ -52,7 +52,11 @@ export const MenuData = [
 				href: "/dashboard/inventory",
 				icon: <Boxes />,
 			},
-			{ title: "Inventory Adjustments", href: "#", icon: <Diff /> },
+			{
+				title: "Inventory Adjustments",
+				href: "/dashboard/inventory",
+				icon: <Diff />,
+			},
 		],
 		href: "/dashboard/inventory",
 		icon: <BaggageClaim />,

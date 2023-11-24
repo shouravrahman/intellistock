@@ -1,0 +1,42 @@
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" width="1080"  height="1080" >
+
+<!-- Background -->
+<rect width="500" height="500" fill="#FFFFFF"></rect>
+
+<!-- High-demand item -->
+<!-- Red triangle -->
+<path d="M250 100 L400 400 L100 400 Z" fill="#FF0000"></path>
+
+<!-- Rare collectible -->
+<!-- Yellow circle -->
+<circle cx="250" cy="250" r="100" fill="#FFFF00"></circle>
+
+<!-- Commonly found item -->
+<!-- Blue square -->
+<rect x="200" y="200" width="100" height="100" fill="#0000FF"></rect>
+
+<!-- Exclusive limited edition item -->
+<!-- Green hexagon -->
+<polygon points="250,150 350,225 350,325 250,400 150,325 150,225" fill="#00FF00"></polygon>
+
+<!-- Useful tool -->
+<!-- Orange pentagon -->
+<polygon points="350,175 400,275 350,375 250,375 200,275" fill="#FFA500"></polygon>
+
+<!-- Delicate accessory -->
+<!-- Pink oval -->
+<ellipse cx="250" cy="325" rx="75" ry="50" fill="#FF69B4"></ellipse>
+
+<!-- Miscellaneous item -->
+<!-- Cyan parallelogram -->
+<polygon points="250,325 325,325 375,400 200,400" fill="#00FFFF"></polygon>
+
+<!-- Antique artifact -->
+<!-- Purple octagon -->
+<polygon points="275,425 425,425 475,375 475,375 475,225 425,175 275,175 225,225" fill="#800080"></polygon>
+
+<!-- Mysterious and rare item -->
+<!-- Black diamond -->
+<polygon points="250,450 325,375 250,300 175,375" fill="#000000"></polygon>
+
+</svg>

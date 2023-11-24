@@ -1,12 +1,14 @@
 "use client";
 import { useState } from "react";
 import clsx from "clsx";
-import { ArrowLeft, ScanSearch, Warehouse } from "lucide-react";
+import { ArrowLeft, ScanSearch, Warehouse, WarehouseIcon } from "lucide-react";
 import MenuItem from "./MenuItem";
 import SubMenuItem from "./SubmenuItem";
 import SubscriptionCard from "../SubscriptionCard";
 import useSidebarState from "./state/sidebarState";
 import { MenuData } from "@/constants/sidebarData";
+import Image from "next/image";
+import Icon from "./Icon";
 const Sidebar = () => {
 	const { open, setOpen } = useSidebarState();
 	const [subMenuOpen, setSubMenuOpen] = useState(false);
@@ -48,30 +50,12 @@ const Sidebar = () => {
 		"p-1",
 		!open && "rotate-180"
 	);
-
-	const warehouseClasses = clsx(
-		"bg-amber-400",
-		"h-10",
-		"w-10",
-		"rounded",
-		"p-1",
-		"cursor-pointer",
-		"duration-300",
-		"ease-in",
-		"mr-2",
-		open && "rotate-[360deg]"
+	const logoClasses = clsx(
+		// "px-2",
+		"transition-all duration-300 ease-in ",
+		!open && "w-40 object-contain h-28  -translate-x-14",
+		open && "w-full h-28 object-cover translate-x-0"
 	);
-
-	const titleClasses = clsx(
-		"text-vercel-white",
-		"origin-left",
-		"font-medium",
-		"text-2xl",
-		!open && "scale-0",
-		"duration-300",
-		"ease-in"
-	);
-
 	const searchInputClasses = clsx(
 		"text-base",
 		"w-full",
@@ -97,9 +81,16 @@ const Sidebar = () => {
 				}}
 			/>
 
-			<div className='inline-flex gap-6'>
-				<Warehouse className={warehouseClasses} />
-				<h1 className={titleClasses}>Inventory</h1>
+			{/* <Warehouse className={warehouseClasses} />
+				<h1 className={titleClasses}>Inventory</h1> */}
+			<div className='w-60 h-24'>
+				<Image
+					className={logoClasses}
+					src='/logo-transparent.png'
+					width={100}
+					height={100}
+					alt='logo'
+				/>
 			</div>
 
 			<div className='flex items-center rounded-md mt-10 py-2'>
