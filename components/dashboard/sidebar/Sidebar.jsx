@@ -87,8 +87,8 @@ const Sidebar = () => {
 				<Image
 					className={logoClasses}
 					src='/logo-transparent.png'
-					width={100}
-					height={100}
+					width={300}
+					height={300}
 					alt='logo'
 				/>
 			</div>
