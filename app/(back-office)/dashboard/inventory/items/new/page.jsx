@@ -15,6 +15,7 @@ import { UploadButton, UploadDropzone } from "@/lib/uploadthings";
 import { Pencil } from "lucide-react";
 import Image from "next/image";
 import ImageUpload from "@/components/FormInputs/ImageUpload";
+import { notify } from "@/lib/toaster";
 
 const ItemsSchema = z.object({
 	itemName: z.string().min(3).max(50),
@@ -25,8 +26,8 @@ const ItemsSchema = z.object({
 	quantity: z.coerce.number().min(0),
 	unit: z.string().min(2).max(20),
 	brand: z.string().min(2).max(50),
-	unitPrice: z.coerce.number().min(0),
-	costPrice: z.coerce.number().min(0),
+	buyingPrice: z.coerce.number().min(0),
+	sellingPrice: z.coerce.number().min(0),
 	supplier: z.string().min(3).max(50),
 	reorderPoint: z.string().min(0),
 	warehouse: z.string().min(3).max(50),
@@ -43,7 +44,7 @@ const ItemsForm = () => {
 		register,
 		reset,
 		handleSubmit,
-		formState: { errors, isLoading },
+		formState: { errors, isSubmitting },
 	} = useForm({
 		resolver: zodResolver(ItemsSchema),
 	});
@@ -65,26 +66,18 @@ const ItemsForm = () => {
 	const onSubmit = async (data) => {
 		console.log(data);
 		data.imageUrl = imageUrl;
-		const baseUrl = "http://localhost:3000";
+
 		try {
-			const response = await fetch(`${baseUrl}/api/items`, {
-				method: "POST",
-				headers: {
-					"Content-Type": "application/json",
-				},
-				body: JSON.stringify(data),
-			});
+			const response = await handleRequest("/api/unit", "POST", data);
 			if (response.ok) {
 				reset();
-				notify();
+				notify("success", "🦄 New Item created!");
 				setImageUrl("");
 			}
 		} catch (error) {
 			console.log(error);
 		}
 	};
-
-	const notify = () => toast("New Item created!");
 
 	return (
 		<div>
@@ -150,7 +143,7 @@ const ItemsForm = () => {
 
 					<TextInput
 						label='Buying Price'
-						name='unitPrice'
+						name='buyingPrice'
 						register={register}
 						errors={errors}
 						type='number'
@@ -159,7 +152,7 @@ const ItemsForm = () => {
 					/>
 					<TextInput
 						label='Selling Price'
-						name='costPrice'
+						name='sellingPrice'
 						register={register}
 						errors={errors}
 						type='number'
@@ -233,7 +226,7 @@ const ItemsForm = () => {
 					/>
 
 					<div className='py-4'>
-						<SubmitButton title='Item' isLoading={isLoading} />
+						<SubmitButton title='Item' isSubmitting={isSubmitting} />
 					</div>
 				</div>
 			</form>

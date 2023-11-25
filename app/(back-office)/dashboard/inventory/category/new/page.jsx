@@ -10,6 +10,9 @@ import { Loader2, Plus } from "lucide-react";
 import SubmitButton from "@/components/FormInputs/SubmitButton";
 import TextArea from "@/components/FormInputs/TextArea";
 import { toast } from "react-toastify";
+import useSubmit from "@/lib/hooks/useSubmit";
+import handleRequest from "@/lib/api";
+import { notify } from "@/lib/toaster";
 
 const CategorySchema = z.object({
 	title: z
@@ -17,7 +20,7 @@ const CategorySchema = z.object({
 		.min(3, { message: "title must be minimum 3 charecters long" })
 		.max(50, { message: "title can not be more than 50 charecters" }),
 
-	category_desc: z
+	description: z
 		.string()
 		.min(30, {
 			message: "Category description must be minimum 30 charecters long",
@@ -28,33 +31,18 @@ const CategorySchema = z.object({
 });
 
 const NewCategory = () => {
-	const {
-		reset,
-		register,
-		handleSubmit,
-		formState: { errors, isLoading },
-	} = useForm({
-		resolver: zodResolver(CategorySchema),
-	});
-	const notify = () => toast("New Category created!");
-	const onSubmit = async (data) => {
-		const baseUrl = "http://localhost:3000";
-		try {
-			const response = await fetch(`${baseUrl}/api/categories`, {
-				method: "POST",
-				headers: {
-					"Content-Type": "application/json",
-				},
-				body: JSON.stringify(data),
-			});
-			if (response.ok) {
-				reset();
-				notify();
+	const { register, handleSubmit, errors, isSubmitting } = useSubmit(
+		CategorySchema,
+		async (data) => {
+			try {
+				await handleRequest("/api/category", "POST", data);
+				notify("success", "🦄 New category created!");
+			} catch (error) {
+				// Handle or log the error
+				console.log(error);
 			}
-		} catch (error) {
-			console.log(error);
 		}
-	};
+	);
 
 	return (
 		<div className='font-rubik font-medium text-base'>
@@ -63,7 +51,7 @@ const NewCategory = () => {
 
 			{/* form */}
 			<form
-				onSubmit={handleSubmit(onSubmit)}
+				onSubmit={handleSubmit}
 				className='w-full max-w-4xl p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 mx-auto mt-8'
 			>
 				<div className='grid gap-4 sm:grid-cols-2 sm:gap-6'>
@@ -77,12 +65,12 @@ const NewCategory = () => {
 
 					<TextArea
 						register={register}
-						name='category_desc'
+						name='description'
 						label='Category Description'
 						errors={errors}
 					/>
 				</div>
-				<SubmitButton isLoading={isLoading} title='Category' />
+				<SubmitButton isSubmitting={isSubmitting} title='Category' />
 			</form>
 		</div>
 	);

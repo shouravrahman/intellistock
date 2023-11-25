@@ -1,11 +1,13 @@
+import db from "@/lib/db";
 import { NextResponse } from "next/server";
 
 export async function POST(req) {
 	try {
-		const { unitName, abbreviation, defaultUnit } = await req.json();
+		const { title, abbreviation, defaultUnit } = await req.json();
 
-		const unit = { unitName, abbreviation, defaultUnit };
-		console.log(unit);
+		const unit = await db.unit.create({
+			data: { title, abbreviation, defaultUnit },
+		});
 
 		return NextResponse.json(unit);
 	} catch (error) {

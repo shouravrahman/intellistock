@@ -1,11 +1,13 @@
+import db from "@/lib/db";
 import { NextResponse } from "next/server";
 
 export async function POST(req) {
 	try {
-		const { brandName } = await req.json();
+		const { title } = await req.json();
 
-		const brand = { brandName };
-		console.log(brand);
+		const brand = await db.brand.create({
+			data: { title },
+		});
 
 		// Logic to save the brand in the database can be added here
 
