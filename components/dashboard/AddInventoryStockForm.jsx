@@ -7,9 +7,13 @@ import TextArea from "@/components/FormInputs/TextArea";
 import SubmitButton from "@/components/FormInputs/SubmitButton";
 import { toast } from "react-toastify";
 import Select from "@/components/FormInputs/Select";
+import useSubmit from "@/lib/hooks/useSubmit";
+import handleRequest from "@/lib/api";
+import { notify } from "@/lib/toaster";
 
 const addStockSchema = z.object({
-	addStock: z.coerce.number().min(2),
+	addedStockQuantity: z.coerce.number().min(2),
+	referenceNumber: z.string().min(5),
 	notes: z.string().max(255),
 	receivingWarehouseId: z
 		.string()
@@ -19,48 +23,39 @@ const addStockSchema = z.object({
 });
 
 const AddInventoryStockForm = () => {
-	const {
-		register,
-		reset,
-		handleSubmit,
-		formState: { errors, isLoading },
-	} = useForm({
-		resolver: zodResolver(addStockSchema),
-	});
-
-	const onSubmit = async (data) => {
-		console.log(data);
-		const baseUrl = "http://localhost:3000";
-		try {
-			const response = await fetch(`${baseUrl}/api/adjustments/add`, {
-				method: "POST",
-				headers: {
-					"Content-Type": "application/json",
-				},
-				body: JSON.stringify(data),
-			});
-			if (response.ok) {
-				reset();
-				notify();
+	const { register, handleSubmit, errors, isSubmitting } = useSubmit(
+		addStockSchema,
+		async (data) => {
+			try {
+				await handleRequest("/api/adjustments/add", "POST", data);
+				notify("success", "🦄 New Stock added!");
+			} catch (error) {
+				// Handle or log the error
+				console.log(error);
 			}
-		} catch (error) {
-			console.log(error);
 		}
-	};
-	const notify = () => toast("Adjustment Successful!");
+	);
 	const warehouseTypeOptions = [
 		{ value: "branchA", label: "Branch A" },
 		{ value: "branchB", label: "Branch B" },
 	];
 	return (
 		<form
-			onSubmit={handleSubmit(onSubmit)}
+			onSubmit={handleSubmit}
 			className='w-full max-w-4xl p-8 bg-white border border-gray-200 rounded-lg shadow mx-auto mt-8'
 		>
 			<div className='grid gap-4 sm:grid-cols-2 sm:gap-6'>
 				<TextInput
+					label='Reference Number'
+					name='referenceNumber'
+					register={register}
+					errors={errors}
+					type='number'
+				/>
+
+				<TextInput
 					label='Enter quantity of stock to add'
-					name='addStock'
+					name='addedStockQuantity'
 					register={register}
 					errors={errors}
 					type='number'
@@ -81,7 +76,7 @@ const AddInventoryStockForm = () => {
 					errors={errors}
 				/>
 				<div className='py-3'>
-					<SubmitButton title='Stock' isLoading={isLoading} />
+					<SubmitButton title='Stock' isSubmitting={isSubmitting} />
 				</div>
 			</div>
 		</form>
