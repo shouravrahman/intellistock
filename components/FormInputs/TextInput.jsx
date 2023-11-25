@@ -8,6 +8,7 @@ const TextInput = ({
 	type = "text",
 	errors,
 	isNumber,
+	defaultValue,
 	className = "sm:col-span-2",
 	...rest
 }) => {
@@ -23,6 +24,7 @@ const TextInput = ({
 				type={type}
 				name={name}
 				id={name}
+				defaultValue={defaultValue}
 				className={`w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg ${
 					errors && errors[name] ? "border-red-500" : ""
 				}`}
