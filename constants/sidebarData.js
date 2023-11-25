@@ -33,17 +33,17 @@ export const MenuData = [
 				icon: <ListChecks />,
 			},
 			{
-				title: "Categories",
+				title: "Category",
 				href: "/dashboard/inventory",
 				icon: <Boxes />,
 			},
 			{
-				title: "Brands",
+				title: "Brand",
 				href: "/dashboard/inventory",
 				icon: <Boxes />,
 			},
 			{
-				title: "Units",
+				title: "Unit",
 				href: "/dashboard/inventory",
 				icon: <Boxes />,
 			},
