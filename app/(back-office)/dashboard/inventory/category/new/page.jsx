@@ -1,15 +1,10 @@
 "use client";
 
 import FormHeader from "@/components/dashboard/FormHeader";
-import React from "react";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import TextInput from "@/components/FormInputs/TextInput";
-import { Loader2, Plus } from "lucide-react";
 import SubmitButton from "@/components/FormInputs/SubmitButton";
 import TextArea from "@/components/FormInputs/TextArea";
-import { toast } from "react-toastify";
 import useSubmit from "@/lib/hooks/useSubmit";
 import handleRequest from "@/lib/api";
 import { notify } from "@/lib/toaster";
@@ -36,7 +31,7 @@ const NewCategory = () => {
 		async (data) => {
 			try {
 				await handleRequest("/api/category", "POST", data);
-				notify("success", "🦄 New category created!");
+				notify("success", "  New category created!");
 			} catch (error) {
 				// Handle or log the error
 				console.log(error);

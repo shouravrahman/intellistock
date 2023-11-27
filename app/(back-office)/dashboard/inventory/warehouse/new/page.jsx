@@ -1,13 +1,9 @@
 "use client";
-import React from "react";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import TextInput from "@/components/FormInputs/TextInput";
 import TextArea from "@/components/FormInputs/TextArea";
 import SubmitButton from "@/components/FormInputs/SubmitButton";
 import FormHeader from "@/components/dashboard/FormHeader";
-import { toast } from "react-toastify";
 import Select from "@/components/FormInputs/Select";
 import useSubmit from "@/lib/hooks/useSubmit";
 import handleRequest from "@/lib/api";
@@ -42,7 +38,7 @@ const WarehouseForm = () => {
 		async (data) => {
 			try {
 				await handleRequest("/api/warehouse", "POST", data);
-				notify("success", "🦄 New warehouse created!");
+				notify("success", "  New warehouse created!");
 			} catch (error) {
 				// Handle or log the error
 				console.log(error);

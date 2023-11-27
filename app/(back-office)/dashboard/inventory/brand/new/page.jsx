@@ -1,12 +1,8 @@
 "use client";
-import React from "react";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import TextInput from "@/components/FormInputs/TextInput";
 import FormHeader from "@/components/dashboard/FormHeader";
 import SubmitButton from "@/components/FormInputs/SubmitButton";
-import { toast } from "react-toastify";
 import useSubmit from "@/lib/hooks/useSubmit";
 import handleRequest from "@/lib/api";
 import { notify } from "@/lib/toaster";
@@ -21,7 +17,7 @@ const BrandsForm = () => {
 		async (data) => {
 			try {
 				await handleRequest("/api/brand", "POST", data);
-				notify("success", "🦄 New brand created!");
+				notify("success", "  New brand created!");
 			} catch (error) {
 				// Handle or log the error
 				console.log(error);

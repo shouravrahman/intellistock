@@ -29,7 +29,7 @@ const TextInput = ({
 					errors && errors[name] ? "border-red-500" : ""
 				}`}
 				autoComplete={name}
-				placeholder={label}
+				placeholder={`Type the ${label}`}
 				{...register(
 					name,
 					{ required: isRequired },

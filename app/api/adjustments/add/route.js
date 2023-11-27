@@ -1,16 +1,23 @@
+import db from "@/lib/db";
 import { NextResponse } from "next/server";
 
 export async function POST(req) {
 	try {
-		const { addedStockQuantity, receivingWarehouseId, notes, referenceNumber } =
-			await req.json();
+		const {
+			addedStockQuantity,
+			receivingWarehouseId,
+			notes,
+			referenceNumber,
+			itemId,
+		} = await req.json();
 
-		const addedStock = await db.addstockadjustemnt.create({
+		const addedStock = await db.addStockAdjustment.create({
 			data: {
 				addedStockQuantity,
 				receivingWarehouseId,
 				notes,
 				referenceNumber,
+				itemId,
 			},
 		});
 

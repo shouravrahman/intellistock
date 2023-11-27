@@ -1,13 +1,9 @@
 "use client";
 // UnitsForm.js
-import React from "react";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import TextInput from "@/components/FormInputs/TextInput";
 import FormHeader from "@/components/dashboard/FormHeader";
 import SubmitButton from "@/components/FormInputs/SubmitButton";
-import { toast } from "react-toastify";
 import useSubmit from "@/lib/hooks/useSubmit";
 import handleRequest from "@/lib/api";
 import { notify } from "@/lib/toaster";
@@ -23,7 +19,7 @@ const UnitsForm = () => {
 		async (data) => {
 			try {
 				await handleRequest("/api/unit", "POST", data);
-				notify("success", "🦄 New unit created!");
+				notify("success", "New unit created!");
 			} catch (error) {
 				// Handle or log the error
 				console.log(error);

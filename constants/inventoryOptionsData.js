@@ -16,6 +16,14 @@ export const optionsData = [
 		img: "/units.svg",
 	},
 	{
+		title: "Supplier",
+		description: "Define different units of measurement for your items",
+		linkTitle: "New Supplier",
+		href: "/dashboard/inventory/supplier/new",
+		enabled: true,
+		img: "/supply.svg",
+	},
+	{
 		title: "Category",
 		description: "Bundle different items together and sell them as kits",
 		linkTitle: "New Category",

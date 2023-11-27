@@ -53,6 +53,11 @@ export const MenuData = [
 				icon: <Boxes />,
 			},
 			{
+				title: "Supplier",
+				href: "/dashboard/inventory",
+				icon: <Truck />,
+			},
+			{
 				title: "Inventory Adjustments",
 				href: "/dashboard/inventory",
 				icon: <Diff />,

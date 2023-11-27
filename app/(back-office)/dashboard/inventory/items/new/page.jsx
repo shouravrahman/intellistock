@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -9,11 +9,7 @@ import TextInput from "@/components/FormInputs/TextInput";
 import TextArea from "@/components/FormInputs/TextArea";
 import SubmitButton from "@/components/FormInputs/SubmitButton";
 import FormHeader from "@/components/dashboard/FormHeader";
-import { toast } from "react-toastify";
 import Select from "@/components/FormInputs/Select";
-import { UploadButton, UploadDropzone } from "@/lib/uploadthings";
-import { Pencil } from "lucide-react";
-import Image from "next/image";
 import ImageUpload from "@/components/FormInputs/ImageUpload";
 import { notify } from "@/lib/toaster";
 
@@ -28,7 +24,7 @@ const ItemsSchema = z.object({
 	brand: z.string().min(2).max(50),
 	buyingPrice: z.coerce.number().min(0),
 	sellingPrice: z.coerce.number().min(0),
-	supplier: z.string().min(3).max(50),
+	suppliers: z.string().min(3).max(50),
 	reorderPoint: z.string().min(0),
 	warehouse: z.string().min(3).max(50),
 	// imageUrl: z.string().min(3),
@@ -71,7 +67,7 @@ const ItemsForm = () => {
 			const response = await handleRequest("/api/unit", "POST", data);
 			if (response.ok) {
 				reset();
-				notify("success", "🦄 New Item created!");
+				notify("success", "  New Item created!");
 				setImageUrl("");
 			}
 		} catch (error) {
@@ -161,7 +157,7 @@ const ItemsForm = () => {
 					/>
 					<TextInput
 						label='Supplier'
-						name='supplier'
+						name=' suppliers'
 						register={register}
 						errors={errors}
 						className='w-full'

@@ -1,16 +1,27 @@
+import db from "@/lib/db";
 import { NextResponse } from "next/server";
 
 export async function POST(req) {
 	try {
-		const { receivingWarehouseId, transferStock, givingWarehouseId, notes } =
-			await req.json();
-
-		const adjustment = {
+		const {
 			receivingWarehouseId,
+			itemId,
 			transferStock,
 			givingWarehouseId,
 			notes,
-		};
+			referenceNumber,
+		} = await req.json();
+
+		const adjustment = await db.transferStockAdjustment.create({
+			data: {
+				receivingWarehouseId,
+				transferStock,
+				givingWarehouseId,
+				notes,
+				itemId,
+				referenceNumber,
+			},
+		});
 		console.log(adjustment);
 
 		return NextResponse.json(adjustment);
@@ -19,7 +30,7 @@ export async function POST(req) {
 		return NextResponse.json(
 			{
 				error,
-				message: "Failed to create a adjustment",
+				message: "Failed to create a transfer",
 			},
 			{ status: 500 }
 		);
