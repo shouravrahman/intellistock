@@ -21,7 +21,7 @@ import {
 } from "lucide-react";
 
 export const MenuData = [
-	{ title: "Home", href: "/", icon: <Home /> },
+	{ title: "Home", href: "/dashboard/home/overview", icon: <Home /> },
 
 	{
 		title: "Inventory",
