@@ -11,13 +11,9 @@ const Select = ({ label, name, register, errors, options }) => {
 				{...register(name)}
 				className='w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg'
 			>
-				{options.map((option) => (
-					<option
-						className='m-2 font-semibold'
-						key={option.value}
-						value={option.value}
-					>
-						{option.label}
+				{options?.map((option, i) => (
+					<option className='m-2 font-semibold' key={i} value={option.id}>
+						{option.title || option.value}
 					</option>
 				))}
 			</select>

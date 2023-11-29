@@ -1,14 +1,13 @@
 "use client";
 import { useState } from "react";
 import clsx from "clsx";
-import { ArrowLeft, ScanSearch, Warehouse, WarehouseIcon } from "lucide-react";
+import { ScanSearch } from "lucide-react";
 import MenuItem from "./MenuItem";
 import SubMenuItem from "./SubmenuItem";
 import SubscriptionCard from "../SubscriptionCard";
 import useSidebarState from "./state/sidebarState";
 import { MenuData } from "@/constants/sidebarData";
 import Image from "next/image";
-import Icon from "./Icon";
 const Sidebar = () => {
 	const { open, setOpen } = useSidebarState();
 	const [subMenuOpen, setSubMenuOpen] = useState(false);
@@ -24,28 +23,31 @@ const Sidebar = () => {
 		"sidebar-bg",
 		"p-4",
 		"pt-8",
-		"min-h-screen",
+		"h-screen",
 		open ? "w-64" : "w-20",
 		"fixed",
+		"z-10",
 		"transition-all",
 		"ease-in-out",
-		"duration-600"
+		"duration-600",
+		"overflow-y-auto",
+		"overflow-x-hidden"
 	);
 
 	const arrowClasses = clsx(
-		"bg-vercel-black",
-		"h-9",
-		"w-9",
-		"z-10",
+		"bg-transparent",
+		"h-16",
+		"w-16",
+		"z-15",
 		"text-vercel-white",
 		"rounded-full",
 		"absolute",
-		"-right-4",
-		"bottom-9",
-		"border",
-		"border-white",
+		"top-2/3",
+		"transform",
+		"-translate-y-1/2",
+		"-right-5",
 		"outline-none",
-		"border-purple-800",
+		"border-orange-800",
 		"cursor-pointer",
 		"p-1",
 		!open && "rotate-180"
@@ -59,7 +61,7 @@ const Sidebar = () => {
 	const searchInputClasses = clsx(
 		"text-base",
 		"w-full",
-		"bg-purple-50",
+		"bg-orange-50",
 		"bg-opacity-40",
 		"py-1",
 		"rounded-lg",
@@ -73,13 +75,15 @@ const Sidebar = () => {
 
 	return (
 		<div className={containerClasses}>
-			<ArrowLeft
+			<button
 				className={arrowClasses}
 				onClick={() => {
 					setOpen(!open);
 					setSubMenuOpen({});
 				}}
-			/>
+			>
+				<Image src='/arrow.svg' alt='arrow icon' width={100} height={100} />
+			</button>
 
 			{/* <Warehouse className={warehouseClasses} />
 				<h1 className={titleClasses}>Inventory</h1> */}

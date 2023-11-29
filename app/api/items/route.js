@@ -1,10 +1,11 @@
 // api/items.js
+import db from "@/lib/db";
 import { NextResponse } from "next/server";
 
 export async function POST(req) {
 	try {
 		// const {
-		// 	itemName,
+		// 	title,
 		// 	description,
 		// 	category,
 		// 	sku,
@@ -14,7 +15,7 @@ export async function POST(req) {
 		// 	brand,
 		// 	buyingPrice,
 		// 	sellingPrice,
-		// 	 suppliers,
+		// 	suppliers,
 		// 	reorderPoint,
 		// 	warehouse,
 		// 	imageUrl,
@@ -23,32 +24,15 @@ export async function POST(req) {
 		// 	taxRate,
 		// 	notes,
 		// } = await req.json();
-		const data = await req.json();
+		const itemData = await req.json();
 
-		// const newItem = {
-		// 	itemName,
-		// 	description,
-		// 	category,
-		// 	sku,
-		// 	barcode,
-		// 	quantity,
-		// 	unit,
-		// 	brand,
-		// 	buyingPrice,
-		// 	sellingPrice,
-		// 	 suppliers,
-		// 	reorderPoint,
-		// 	warehouse,
-		// 	imageUrl,
-		// 	weight,
-		// 	dimensions,
-		// 	taxRate,
-		// 	notes,
-		// };
+		const item = await db.item.create({
+			data: {
+				...itemData,
+			},
+		});
 
-		console.log(data);
-
-		return NextResponse.json(data);
+		return NextResponse.json(item);
 	} catch (error) {
 		console.error(error);
 		return NextResponse.json(

@@ -9,10 +9,19 @@ import handleRequest from "@/lib/api";
 import { notify } from "@/lib/toaster";
 import TextArea from "@/components/FormInputs/TextArea";
 
+const phoneRegex = new RegExp(
+	/^([+]?[\s0-9]+)?(\d{3}|[(]?[0-9]+[)])?([-]?[\s]?[0-9])+$/
+);
 const SupplierSchema = z.object({
-	name: z.string().min(3).max(50),
-	phone: z.string().max(15),
-	email: z.string().email().max(255),
+	title: z
+		.string()
+		.min(3)
+		.max(50)
+		.refine((data) => data.trim() !== "", {
+			message: "Supplier's Name is required",
+		}),
+	phone: z.string().regex(phoneRegex, "Invalid Number!"),
+	email: z.string().email({ message: "Invalid email format" }).max(255),
 	address: z.string().max(255),
 	contactPerson: z.string().max(50),
 	supplierCode: z.string().min(3).max(20),
@@ -45,35 +54,35 @@ const SupplierForm = () => {
 			>
 				<div className='grid gap-4 sm:grid-cols-2 sm:gap-6'>
 					<TextInput
-						label='Suppliers Name'
-						name='name'
+						label="Supplier's Name"
+						name='title'
 						register={register}
 						errors={errors}
 						isRequired={true}
 					/>
 					<TextInput
-						label='Suppliers Phone'
+						label='Phone Number'
 						name='phone'
 						register={register}
 						errors={errors}
 						className='w-full'
 					/>
 					<TextInput
-						label='Suppliers Email'
+						label='Email'
 						name='email'
 						register={register}
 						errors={errors}
 						className='w-full'
 					/>
 					<TextInput
-						label='Suppliers Address'
+						label='Address'
 						name='address'
 						register={register}
 						errors={errors}
 						className='w-full'
 					/>
 					<TextInput
-						label='Supplier Contact Person'
+						label='Contact Person'
 						name='contactPerson'
 						register={register}
 						errors={errors}
@@ -86,9 +95,8 @@ const SupplierForm = () => {
 						errors={errors}
 						className='w-full'
 					/>
-
 					<TextInput
-						label='Supplier Tax ID / TIN'
+						label='Tax ID / TIN'
 						name='taxID'
 						register={register}
 						errors={errors}

@@ -19,7 +19,7 @@ const FixedHeader = ({ href }) => {
 
 				<Link
 					href={href}
-					className='flex-between px-3 py-2  rounded-md bg-purple-900'
+					className='flex-between px-3 py-2  rounded-md bg-orange-00'
 				>
 					<Plus className='h-6 w-6 text-vercel-white' />
 					<span className=' text-vercel-white ml-2'>New</span>

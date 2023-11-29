@@ -25,7 +25,7 @@ const SubMenuItem = ({ submenuItem }) => {
 			)}
 		>
 			{" "}
-			<Icon icon={submenuItem.icon} />
+			<Icon icon={submenuItem.icon} href={submenuItem.href} />
 			<Link className='text-sm font-medium flex-1' href={submenuItem.href}>
 				{submenuItem.title}
 			</Link>

@@ -19,7 +19,7 @@ const SalesOverview = () => {
 			unit: "Pkgs",
 			icon: <CheckCircle />,
 			href: "#",
-			color: "text-blue-500",
+			color: "text-orange-500",
 		},
 		{
 			number: 10,

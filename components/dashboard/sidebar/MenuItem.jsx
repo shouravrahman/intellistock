@@ -26,7 +26,7 @@ const MenuItem = ({ menu, open, subMenuOpen, toggleSubMenu }) => {
 				menu.spacing ? "mt-12" : "mt-3"
 			)}
 		>
-			<Icon icon={menu.icon} />
+			<Icon icon={menu.icon} href={menu.href} />
 			<Link
 				className={clsx(
 					!open && "hidden",

@@ -12,17 +12,11 @@ import { notify } from "@/lib/toaster";
 const CategorySchema = z.object({
 	title: z
 		.string()
-		.min(3, { message: "title must be minimum 3 charecters long" })
-		.max(50, { message: "title can not be more than 50 charecters" }),
-
-	description: z
-		.string()
-		.min(30, {
-			message: "Category description must be minimum 30 charecters long",
-		})
-		.max(450, {
-			message: "Category description can not be more than 450 charecters",
-		}),
+		.min(3)
+		.max(50, { message: "Title cannot exceed 50 characters" }),
+	description: z.string().min(30).max(450, {
+		message: "Description should be between 30 and 450 characters",
+	}),
 });
 
 const NewCategory = () => {

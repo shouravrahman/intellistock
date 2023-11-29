@@ -23,7 +23,7 @@ export default function Tabs({ children }) {
 							className={({ selected }) =>
 								classNames(
 									"w-full rounded-lg py-2.5 text-medium font-medium leading-5",
-									"ring-blue-100/60 ring-offset-1 ring-offset-blue-400 focus:outline-none focus:ring-0",
+									"ring-orange-100/60 ring-offset-1 ring-offset-orange-400 focus:outline-none focus:ring-0",
 									selected
 										? "bg-vercel-white text-vercel-black shadow"
 										: "text-vercel-white hover:bg-vercel-white/[0.12] hover:text-white"
@@ -40,7 +40,7 @@ export default function Tabs({ children }) {
 							key={idx}
 							className={classNames(
 								"rounded-xl w-full bg-vercel-white p-3 h-full",
-								"ring-blue-100/60 ring-offset-1 ring-offset-blue-400 focus:outline-none focus:ring-0"
+								"ring-orange-100/60 ring-offset-1 ring-offset-orange-400 focus:outline-none focus:ring-0"
 							)}
 						>
 							{content}

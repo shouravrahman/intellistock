@@ -26,7 +26,7 @@ export async function POST(req) {
 export async function GET(req) {
 	try {
 		const categories = await db.category.findMany();
-		return NextResponse.json(categories);
+		if (categories) return NextResponse.json(categories);
 	} catch (error) {
 		console.error(error);
 		return NextResponse.json(
