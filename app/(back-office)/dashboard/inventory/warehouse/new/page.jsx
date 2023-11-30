@@ -1,36 +1,15 @@
 "use client";
 import { z } from "zod";
-import TextInput from "@/components/FormInputs/TextInput";
-import TextArea from "@/components/FormInputs/TextArea";
-import SubmitButton from "@/components/FormInputs/SubmitButton";
-import FormHeader from "@/components/dashboard/FormHeader";
-import Select from "@/components/FormInputs/Select";
+
 import useSubmit from "@/lib/hooks/useSubmit";
 import handleRequest from "@/lib/api";
 import { notify } from "@/lib/toaster";
-
-const WarehouseSchema = z.object({
-	title: z
-		.string()
-		.min(3)
-		.max(50)
-		.refine((data) => data.trim() !== "", {
-			message: "Warehouse Name is required and should not be empty",
-		}),
-	location: z
-		.string()
-		.min(3)
-		.max(100)
-		.refine((data) => data.trim() !== "", {
-			message: "Location is required and should not be empty",
-		}),
-	description: z.string().max(255),
-	warehouseType: z
-		.string()
-		.refine((data) => ["main", "branch"].includes(data), {
-			message: "Invalid Warehouse Type. Should be either 'main' or 'branch'",
-		}),
-});
+import FormHeader from "@/components/dashboard/form-header";
+import TextInput from "@/components/form/text-input";
+import TextArea from "@/components/form/text-area";
+import Select from "@/components/form/select";
+import SubmitButton from "@/components/form/submit-button";
+import { WarehouseSchema } from "@/validations/warehouse-schema";
 
 const WarehouseForm = () => {
 	const { register, handleSubmit, errors, isSubmitting } = useSubmit(

@@ -1,7 +1,6 @@
-import FixedHeader from "@/components/dashboard/FixedHeader";
-import InventoryOptionCard from "@/components/dashboard/InventoryOptionCard";
-import { optionsData } from "@/constants/inventoryOptionsData";
-
+import InventoryOptionCard from "@/components/cards/inventory-option-card";
+import FixedHeader from "@/components/dashboard/fixed-header";
+import { options } from "@/constants/inventory-options";
 import React from "react";
 
 const Inventory = () => {
@@ -9,7 +8,7 @@ const Inventory = () => {
 		<div>
 			<FixedHeader href='/dashboard/inventory/items/new' />
 			<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-16 py-8 gap-6'>
-				{optionsData?.map((item, idx) => {
+				{options?.map((item, idx) => {
 					return (
 						<InventoryOptionCard
 							key={idx}

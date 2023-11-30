@@ -1,23 +1,13 @@
 "use client";
 
-import FormHeader from "@/components/dashboard/FormHeader";
-import { z } from "zod";
-import TextInput from "@/components/FormInputs/TextInput";
-import SubmitButton from "@/components/FormInputs/SubmitButton";
-import TextArea from "@/components/FormInputs/TextArea";
 import useSubmit from "@/lib/hooks/useSubmit";
 import handleRequest from "@/lib/api";
 import { notify } from "@/lib/toaster";
-
-const CategorySchema = z.object({
-	title: z
-		.string()
-		.min(3)
-		.max(50, { message: "Title cannot exceed 50 characters" }),
-	description: z.string().min(30).max(450, {
-		message: "Description should be between 30 and 450 characters",
-	}),
-});
+import FormHeader from "@/components/dashboard/form-header";
+import TextInput from "@/components/form/text-input";
+import TextArea from "@/components/form/text-area";
+import SubmitButton from "@/components/form/submit-button";
+import { CategorySchema } from "@/validations/category-schema";
 
 const NewCategory = () => {
 	const { register, handleSubmit, errors, isSubmitting } = useSubmit(

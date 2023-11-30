@@ -1,24 +1,12 @@
 "use client";
-// UnitsForm.js
-import { z } from "zod";
-import TextInput from "@/components/FormInputs/TextInput";
-import FormHeader from "@/components/dashboard/FormHeader";
-import SubmitButton from "@/components/FormInputs/SubmitButton";
 import useSubmit from "@/lib/hooks/useSubmit";
 import handleRequest from "@/lib/api";
 import { notify } from "@/lib/toaster";
+import FormHeader from "@/components/dashboard/form-header";
+import TextInput from "@/components/form/text-input";
+import SubmitButton from "@/components/form/submit-button";
+import { UnitsSchema } from "@/validations/units-schema";
 
-const UnitsSchema = z.object({
-	title: z
-		.string()
-		.min(3, { message: "Unit Name should be at least 3 characters long" })
-		.max(50, { message: "Unit Name should not exceed 50 characters" }),
-	abbreviation: z
-		.string()
-		.min(2, { message: "Abbreviation should be at least 2 characters long" })
-		.max(10, { message: "Abbreviation should not exceed 10 characters" }),
-	defaultUnit: z.boolean(),
-});
 const UnitsForm = () => {
 	const { register, handleSubmit, errors, isSubmitting } = useSubmit(
 		UnitsSchema,

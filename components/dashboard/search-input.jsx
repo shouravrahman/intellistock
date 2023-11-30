@@ -10,7 +10,7 @@ const SearchInput = () => {
 			<input
 				type={"search"}
 				id='simple-search'
-				className='bg-slate-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-full pl-10 py-1 px-2'
+				className='bg-slate-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-violet-500 focus:border-violet-500 block w-full pl-10 py-1 px-2'
 				placeholder='Search in customers...'
 				required
 			/>

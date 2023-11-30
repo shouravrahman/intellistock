@@ -1,48 +1,15 @@
 "use client";
-import { z } from "zod";
-import TextInput from "@/components/FormInputs/TextInput";
-import TextArea from "@/components/FormInputs/TextArea";
-import SubmitButton from "@/components/FormInputs/SubmitButton";
-import Select from "@/components/FormInputs/Select";
+
 import useSubmit from "@/lib/hooks/useSubmit";
 import handleRequest from "@/lib/api";
 import { notify } from "@/lib/toaster";
+import TextInput from "@/components/form/text-input";
+import Select from "@/components/form/select";
+import TextArea from "@/components/form/text-area";
+import SubmitButton from "@/components/form/submit-button";
+import { addStockSchema } from "@/validations/add-stock-schema";
 
-const addStockSchema = z.object({
-	addedStockQuantity: z.coerce.number().min(2),
-	referenceNumber: z.string().min(5),
-	notes: z.string().max(255),
-	receivingWarehouseId: z
-		.string()
-		.refine(
-			(data) =>
-				[
-					"65623a092ee79219ea3a4f61",
-					"65623a092ee79219ea3a4f63",
-					"65623a092ee79219ea3a4f62",
-					"65623a092ee79219ea3a4f64",
-				].includes(data),
-			{
-				message: "Invalid Warehouse Type",
-			}
-		),
-	itemId: z
-		.string()
-		.refine(
-			(data) =>
-				[
-					"65623a092ee79219ea3a4f61",
-					"65623a092ee79219ea3a4f63",
-					"65623a092ee79219ea3a4f62",
-					"65623a092ee79219ea3a4f64",
-				].includes(data),
-			{
-				message: "Invalid Warehouse Type",
-			}
-		),
-});
-
-const AddInventoryStockForm = () => {
+const AddStockForm = () => {
 	const { register, handleSubmit, errors, isSubmitting } = useSubmit(
 		addStockSchema,
 		async (data) => {
@@ -113,4 +80,4 @@ const AddInventoryStockForm = () => {
 	);
 };
 
-export default AddInventoryStockForm;
+export default AddStockForm;

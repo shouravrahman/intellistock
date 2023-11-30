@@ -1,6 +1,4 @@
-import { CheckCircle } from "lucide-react";
 import Link from "next/link";
-import React from "react";
 
 const SalesActivityCard = ({ number, title, unit, icon, href, color }) => {
 	return (

@@ -1,5 +1,6 @@
 "use client";
-import Header from "@/components/dashboard/Header";
+
+import Header from "@/components/dashboard/header";
 import Sidebar from "@/components/dashboard/sidebar";
 import useSidebarState from "@/components/dashboard/sidebar/state/sidebarState";
 import React from "react";

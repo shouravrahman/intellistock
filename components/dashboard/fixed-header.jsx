@@ -1,14 +1,11 @@
 import {
-	Grid2X2,
 	HelpCircle,
 	LayoutGrid,
 	List,
-	ListIcon,
 	MoreHorizontal,
 	Plus,
 } from "lucide-react";
 import Link from "next/link";
-import React from "react";
 
 const FixedHeader = ({ href }) => {
 	return (
@@ -19,7 +16,7 @@ const FixedHeader = ({ href }) => {
 
 				<Link
 					href={href}
-					className='flex-between px-3 py-2  rounded-md bg-orange-00'
+					className='flex-between px-3 py-2  rounded-md bg-violet-600'
 				>
 					<Plus className='h-6 w-6 text-vercel-white' />
 					<span className=' text-vercel-white ml-2'>New</span>
@@ -40,7 +37,7 @@ const FixedHeader = ({ href }) => {
 					<MoreHorizontal className='w-4 h-4' />
 				</button>
 				{/* help button */}
-				<button className='p-2 bg-orange-600 text-vercel-white rounded-md'>
+				<button className='p-2 bg-violet-600 text-vercel-white rounded-md'>
 					<HelpCircle className='w-5 h-5' />
 				</button>
 			</div>

@@ -1,5 +1,5 @@
-import DashboardBanner from "@/components/dashboard/DashboardBanner";
-import SalesOverview from "@/components/dashboard/SalesOverview";
+import SalesOverview from "@/components/cards/sales-overview";
+import DashboardBanner from "@/components/dashboard/dashboard-banner";
 import React from "react";
 
 const Overview = () => {

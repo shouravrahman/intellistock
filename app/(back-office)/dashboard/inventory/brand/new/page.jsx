@@ -1,21 +1,12 @@
 "use client";
-import { z } from "zod";
-import TextInput from "@/components/FormInputs/TextInput";
-import FormHeader from "@/components/dashboard/FormHeader";
-import SubmitButton from "@/components/FormInputs/SubmitButton";
+
 import useSubmit from "@/lib/hooks/useSubmit";
 import handleRequest from "@/lib/api";
 import { notify } from "@/lib/toaster";
-
-const BrandSchema = z.object({
-	title: z
-		.string()
-		.min(3, "Brand title must be at least 3 characters long")
-		.max(50, "Brand title cannot exceed 50 characters")
-		.refine((data) => data.trim() !== "", {
-			message: "Brand title is required and cannot be empty",
-		}),
-});
+import FormHeader from "@/components/dashboard/form-header";
+import TextInput from "@/components/form/text-input";
+import SubmitButton from "@/components/form/submit-button";
+import { BrandSchema } from "@/validations/brands-schema";
 
 const BrandsForm = () => {
 	const { register, handleSubmit, errors, isSubmitting } = useSubmit(

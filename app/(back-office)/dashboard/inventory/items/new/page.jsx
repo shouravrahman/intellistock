@@ -1,6 +1,6 @@
-import FormHeader from "@/components/dashboard/FormHeader";
-import CreateItemForm from "@/components/dashboard/CreateItemForm";
-import { getData } from "@/lib/api_functions/getData";
+import FormHeader from "@/components/dashboard/form-header";
+import { getData } from "@/lib/data-access/getData";
+import CreateItemForm from "../(components)/create-item-form";
 
 const ItemsForm = async () => {
 	//sequencial fetchcing ,waterfall

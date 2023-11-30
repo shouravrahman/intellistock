@@ -1,34 +1,13 @@
 "use client";
 
-import { z } from "zod";
-import TextInput from "@/components/FormInputs/TextInput";
-import FormHeader from "@/components/dashboard/FormHeader";
-import SubmitButton from "@/components/FormInputs/SubmitButton";
 import useSubmit from "@/lib/hooks/useSubmit";
 import handleRequest from "@/lib/api";
 import { notify } from "@/lib/toaster";
-import TextArea from "@/components/FormInputs/TextArea";
-
-const phoneRegex = new RegExp(
-	/^([+]?[\s0-9]+)?(\d{3}|[(]?[0-9]+[)])?([-]?[\s]?[0-9])+$/
-);
-const SupplierSchema = z.object({
-	title: z
-		.string()
-		.min(3)
-		.max(50)
-		.refine((data) => data.trim() !== "", {
-			message: "Supplier's Name is required",
-		}),
-	phone: z.string().regex(phoneRegex, "Invalid Number!"),
-	email: z.string().email({ message: "Invalid email format" }).max(255),
-	address: z.string().max(255),
-	contactPerson: z.string().max(50),
-	supplierCode: z.string().min(3).max(20),
-	paymentTerms: z.string().max(50),
-	taxID: z.string().max(50),
-	notes: z.string().max(255),
-});
+import FormHeader from "@/components/dashboard/form-header";
+import TextInput from "@/components/form/text-input";
+import TextArea from "@/components/form/text-area";
+import { SupplierSchema } from "@/validations/supplier-schema";
+import SubmitButton from "@/components/form/submit-button";
 
 const SupplierForm = () => {
 	const { register, errors, handleSubmit, isSubmitting } = useSubmit(

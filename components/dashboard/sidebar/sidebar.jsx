@@ -2,12 +2,14 @@
 import { useState } from "react";
 import clsx from "clsx";
 import { ScanSearch } from "lucide-react";
-import MenuItem from "./MenuItem";
-import SubMenuItem from "./SubmenuItem";
-import SubscriptionCard from "../SubscriptionCard";
+
 import useSidebarState from "./state/sidebarState";
-import { MenuData } from "@/constants/sidebarData";
+
 import Image from "next/image";
+import MenuItem from "./menu-item";
+import SubMenuItem from "./submenu-item";
+import SubscriptionCard from "@/components/cards/subscription-card";
+import { sidebarData } from "@/constants/sidebar-options";
 const Sidebar = () => {
 	const { open, setOpen } = useSidebarState();
 	const [subMenuOpen, setSubMenuOpen] = useState(false);
@@ -47,7 +49,7 @@ const Sidebar = () => {
 		"-translate-y-1/2",
 		"-right-5",
 		"outline-none",
-		"border-orange-800",
+		"border-violet-800",
 		"cursor-pointer",
 		"p-1",
 		!open && "rotate-180"
@@ -61,7 +63,7 @@ const Sidebar = () => {
 	const searchInputClasses = clsx(
 		"text-base",
 		"w-full",
-		"bg-orange-50",
+		"bg-violet-50",
 		"bg-opacity-40",
 		"py-1",
 		"rounded-lg",
@@ -94,6 +96,7 @@ const Sidebar = () => {
 					width={300}
 					height={300}
 					alt='logo'
+					priority
 				/>
 			</div>
 
@@ -120,7 +123,7 @@ const Sidebar = () => {
 			</div>
 
 			<ul className='pt-2'>
-				{MenuData.map((menu, idx) => (
+				{sidebarData.map((menu, idx) => (
 					<div key={idx}>
 						<MenuItem
 							menu={menu}

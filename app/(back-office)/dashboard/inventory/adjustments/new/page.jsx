@@ -1,8 +1,9 @@
 "use client";
-import AddInventoryStockForm from "@/components/dashboard/AddInventoryStockForm";
-import FormHeader from "@/components/dashboard/FormHeader";
-import TransferInventoryForm from "@/components/dashboard/TransferInventoryForm";
-import Tabs from "@/components/shared/Tabs";
+
+import FormHeader from "@/components/dashboard/form-header";
+import TransferInventoryForm from "../(components)/transfer-stock-form";
+import AddStockForm from "../(components)/add-stock-form";
+import Tabs from "@/components/shared/tabs";
 
 const NewAdjustments = () => {
 	return (
@@ -15,7 +16,7 @@ const NewAdjustments = () => {
 				</Tabs.Tab>
 				<Tabs.Tab label='+ Add Stock'>
 					{/* Your content for Tab 2 */}
-					<AddInventoryStockForm />
+					<AddStockForm />
 				</Tabs.Tab>
 			</Tabs>
 		</div>

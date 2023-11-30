@@ -29,7 +29,7 @@ const DashboardBanner = () => {
 
 					<div className='col-span-3 flex items-center justify-end'>
 						<button
-							className='text-vercel-white uppercase py-2.5 px-8 bg-orange-500 focus:outline-none rounded-lg'
+							className='text-vercel-white uppercase py-2.5 px-8 bg-violet-500 focus:outline-none rounded-lg'
 							onClick={handleCloseBanner}
 						>
 							Enable

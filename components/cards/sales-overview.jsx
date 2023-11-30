@@ -1,7 +1,7 @@
-import { Check, CheckCircle } from "lucide-react";
+import { CheckCircle } from "lucide-react";
 import React from "react";
-import SalesActivityCard from "./SalesActivityCard";
-import InventorySummaryCard from "./InventorySummaryCard";
+import SalesActivityCard from "./sales-activity-card";
+import InventorySummaryCard from "./inventory-summary-card";
 
 const SalesOverview = () => {
 	const salesActivity = [
@@ -19,7 +19,7 @@ const SalesOverview = () => {
 			unit: "Pkgs",
 			icon: <CheckCircle />,
 			href: "#",
-			color: "text-orange-500",
+			color: "text-violet-500",
 		},
 		{
 			number: 10,
