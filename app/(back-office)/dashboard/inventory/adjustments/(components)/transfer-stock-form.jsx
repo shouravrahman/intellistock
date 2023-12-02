@@ -9,7 +9,7 @@ import TextArea from "@/components/form/text-area";
 import SubmitButton from "@/components/form/submit-button";
 import { transferSchema } from "@/validations/transfer-stock-schema";
 
-const TransferInventoryForm = () => {
+const TransferInventoryForm = ({ items, warehouse }) => {
 	const { register, handleSubmit, errors, isSubmitting } = useSubmit(
 		transferSchema,
 		async (data) => {
@@ -22,12 +22,7 @@ const TransferInventoryForm = () => {
 			}
 		}
 	);
-	const warehouseTypeOptions = [
-		{ value: "65623a092ee79219ea3a4f61", label: "Branch A" },
-		{ value: "65623a092ee79219ea3a4f63", label: "Branch B" },
-		{ value: "65623a092ee79219ea3a4f62", label: "Branch C" },
-		{ value: "65623a092ee79219ea3a4f64", label: "Branch D" },
-	];
+
 	return (
 		<form
 			onSubmit={handleSubmit}
@@ -40,15 +35,13 @@ const TransferInventoryForm = () => {
 					register={register}
 					errors={errors}
 					type='number'
-					// defaultValue={657557}
-					// isRequired={true}
 				/>
 				<Select
 					label='Select the Item'
 					name='itemId'
 					register={register}
 					errors={errors}
-					options={warehouseTypeOptions}
+					options={items}
 					className='w-full'
 				/>
 				<TextInput
@@ -64,7 +57,7 @@ const TransferInventoryForm = () => {
 					name='givingWarehouseId'
 					register={register}
 					errors={errors}
-					options={warehouseTypeOptions}
+					options={warehouse}
 					className='w-full'
 				/>
 				<Select
@@ -72,7 +65,7 @@ const TransferInventoryForm = () => {
 					name='receivingWarehouseId'
 					register={register}
 					errors={errors}
-					options={warehouseTypeOptions}
+					options={warehouse}
 					className='w-full'
 				/>
 				<TextArea

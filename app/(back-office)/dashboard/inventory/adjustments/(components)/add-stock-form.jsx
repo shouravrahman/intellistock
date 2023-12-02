@@ -9,7 +9,7 @@ import TextArea from "@/components/form/text-area";
 import SubmitButton from "@/components/form/submit-button";
 import { addStockSchema } from "@/validations/add-stock-schema";
 
-const AddStockForm = () => {
+const AddStockForm = ({ items, warehouse }) => {
 	const { register, handleSubmit, errors, isSubmitting } = useSubmit(
 		addStockSchema,
 		async (data) => {
@@ -22,12 +22,7 @@ const AddStockForm = () => {
 			}
 		}
 	);
-	const warehouseTypeOptions = [
-		{ value: "65623a092ee79219ea3a4f61", label: "Branch A" },
-		{ value: "65623a092ee79219ea3a4f63", label: "Branch B" },
-		{ value: "65623a092ee79219ea3a4f62", label: "Branch C" },
-		{ value: "65623a092ee79219ea3a4f64", label: "Branch D" },
-	];
+
 	return (
 		<form
 			onSubmit={handleSubmit}
@@ -47,7 +42,7 @@ const AddStockForm = () => {
 					name='itemId'
 					register={register}
 					errors={errors}
-					options={warehouseTypeOptions}
+					options={items}
 				/>
 
 				<TextInput
@@ -64,7 +59,7 @@ const AddStockForm = () => {
 					name='receivingWarehouseId'
 					register={register}
 					errors={errors}
-					options={warehouseTypeOptions}
+					options={warehouse}
 				/>
 				<TextArea
 					label='Notes'
