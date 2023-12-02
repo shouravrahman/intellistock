@@ -5,47 +5,8 @@ export const transferSchema = z.object({
 		.number({ required_error: "Stock is required" })
 		.min(2),
 	referenceNumber: z.string().min(5),
-	itemId: z
-		.string()
-		.refine(
-			(data) =>
-				[
-					"65623a092ee79219ea3a4f61",
-					"65623a092ee79219ea3a4f63",
-					"65623a092ee79219ea3a4f62",
-					"65623a092ee79219ea3a4f64",
-				].includes(data),
-			{
-				message: "Invalid Warehouse Type",
-			}
-		),
+	itemId: z.string(),
 	notes: z.string().max(255),
-	receivingWarehouseId: z
-		.string()
-		.refine(
-			(data) =>
-				[
-					"65623a092ee79219ea3a4f61",
-					"65623a092ee79219ea3a4f63",
-					"65623a092ee79219ea3a4f62",
-					"65623a092ee79219ea3a4f64",
-				].includes(data),
-			{
-				message: "Invalid Warehouse Type",
-			}
-		),
-	givingWarehouseId: z
-		.string()
-		.refine(
-			(data) =>
-				[
-					"65623a092ee79219ea3a4f61",
-					"65623a092ee79219ea3a4f63",
-					"65623a092ee79219ea3a4f62",
-					"65623a092ee79219ea3a4f64",
-				].includes(data),
-			{
-				message: "Invalid Warehouse Type",
-			}
-		),
+	receivingWarehouseId: z.string(),
+	givingWarehouseId: z.string(),
 });
