@@ -1,24 +1,14 @@
-"use client";
-
 import FormHeader from "@/components/dashboard/form-header";
-import TransferInventoryForm from "../(components)/transfer-stock-form";
-import AddStockForm from "../(components)/add-stock-form";
-import Tabs from "@/components/shared/tabs";
+import { getData } from "@/lib/data-access/getData";
+import AdjustmentForm from "../(components)/adjustment-form";
 
-const NewAdjustments = () => {
+const NewAdjustments = async () => {
+	const items = await getData("items");
+	const warehouse = await getData("warehouse");
 	return (
 		<div>
 			<FormHeader title='New Warehouse' href='/dashboard/inventory' />
-			<Tabs>
-				<Tabs.Tab label='↕️ Transfer Stock'>
-					{/* Your content for Tab 1 */}
-					<TransferInventoryForm />
-				</Tabs.Tab>
-				<Tabs.Tab label='+ Add Stock'>
-					{/* Your content for Tab 2 */}
-					<AddStockForm />
-				</Tabs.Tab>
-			</Tabs>
+			<AdjustmentForm items={items} warehouse={warehouse} />
 		</div>
 	);
 };
