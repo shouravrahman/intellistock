@@ -17,7 +17,7 @@ model Item {
   category    Category @relation(fields: [categoryId], references: [id], onDelete: Cascade)
   categoryId  String   @db.ObjectId
   sku         String   @unique
-  barcode     String?
+  barcode     String
   quantity    Int
   unit        Unit     @relation(fields: [unitId], references: [id])
   unitId      String   @db.ObjectId
@@ -32,12 +32,12 @@ model Item {
 
   buyingPrice             Float
   sellingPrice            Float
-  reorderPoint            Int
+  reorderPoint            String?
   location                String?
-  imageUrl                String
+  imageUrl                String?
   weight                  Float?
   dimensions              String?
-  taxRate                 Float
+  taxRate                 Float?
   notes                   String?
   TransferStockAdjustment TransferStockAdjustment[]
   AddStockAdjustment      AddStockAdjustment[]
