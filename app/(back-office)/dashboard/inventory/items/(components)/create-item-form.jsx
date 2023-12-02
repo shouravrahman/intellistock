@@ -1,8 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
 import { notify } from "@/lib/toaster";
 import handleRequest from "@/lib/api";
 import TextInput from "@/components/form/text-input";
@@ -11,6 +9,7 @@ import TextArea from "@/components/form/text-area";
 import SubmitButton from "@/components/form/submit-button";
 import ImageUpload from "@/components/form/image-upload";
 import { ItemsSchema } from "@/validations/items-schema";
+import useSubmit from "@/lib/hooks/useSubmit";
 
 const CreateItemForm = ({
 	categoryOptions,
@@ -20,41 +19,25 @@ const CreateItemForm = ({
 	warehouseOptions,
 }) => {
 	const [imageUrl, setImageUrl] = useState("");
-	const {
-		register,
-		reset,
-		handleSubmit,
-		formState: { errors, isSubmitting },
-	} = useForm({
-		resolver: zodResolver(ItemsSchema),
-	});
 
-	const onSubmit = async (data) => {
-		data.imageUrl = imageUrl;
-		try {
-			const response = await handleRequest("/api/items", "POST", data);
-			if (response.ok) {
-				reset();
-				notify("success", "New Item created!");
-				setImageUrl(""); // Reset imageUrl
-			} else {
-				// Handle API response errors
-				const errorData = await response.json();
-				console.error("API error:", errorData);
-				notify("error", "Failed to create item. Please try again.");
-				setImageUrl("");
+	const { register, handleSubmit, errors, isSubmitting } = useSubmit(
+		ItemsSchema,
+		async (data) => {
+			try {
+				data.imageUrl = imageUrl;
+				await handleRequest("/api/items", "POST", data);
+				notify("success", "New items created!");
+			} catch (error) {
+				// Handle or log the error
+				console.log(error);
 			}
-		} catch (error) {
-			// Handle other errors
-			console.error("Unexpected error:", error);
-			notify("error", "An unexpected error occurred. Please try again.");
 		}
-	};
+	);
 
 	return (
 		<div>
 			<form
-				onSubmit={handleSubmit(onSubmit)}
+				onSubmit={handleSubmit}
 				className='w-full max-w-4xl p-8 bg-white border border-gray-200 rounded-lg shadow mx-auto mt-8'
 			>
 				<div className='grid gap-4 sm:grid-cols-2 sm:gap-6'>
@@ -63,7 +46,6 @@ const CreateItemForm = ({
 						name='title'
 						register={register}
 						errors={errors}
-						isRequired={true}
 					/>
 					<Select
 						label='Select the item category'
