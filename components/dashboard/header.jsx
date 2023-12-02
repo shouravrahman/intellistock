@@ -10,6 +10,7 @@ import {
 import React from "react";
 import SearchInput from "./search-input";
 import Image from "next/image";
+import Link from "next/link";
 
 const Header = () => {
 	return (
@@ -29,18 +30,20 @@ const Header = () => {
 				{/* plus icon */}
 
 				<div className='has-tooltip pr-3 border-r border-gray-300'>
-					<span className='tooltip rounded shadow-lg py-1 px-2 bg-violet-500 text-vercel-white mt-10'>
+					<button className='rounded-lg bg-violet-700 p-1 '>
+						<Link href='/dashboard/inventory/items/new'>
+							<Plus className='h-8 w-8 p-1 text-vercel-white' />
+						</Link>
+					</button>
+					<span className='tooltip rounded shadow-lg py-1 px-2 bg-violet-900 text-vercel-white mt-10'>
 						Create
 					</span>
-					<button className=' rounded-lg bg-violet-600'>
-						<Plus className='h-8 w-8 p-1 text-vercel-white' />
-					</button>
 				</div>
 
 				{/* 3 icons */}
 				<div className='flex justify-center gap-4 items-center pl-3'>
 					<div className='has-tooltip  '>
-						<span className='tooltip rounded shadow-lg py-1 px-2 bg-violet-500 text-vercel-white mt-10'>
+						<span className='tooltip rounded shadow-lg py-1 px-2 bg-violet-900 text-vercel-white mt-10'>
 							Profile
 						</span>
 						<button className=' rounded-lg '>
@@ -48,7 +51,7 @@ const Header = () => {
 						</button>
 					</div>
 					<div className='has-tooltip  '>
-						<span className='tooltip rounded shadow-lg py-1 px-2 bg-violet-500  text-vercel-white mt-10'>
+						<span className='tooltip rounded shadow-lg py-1 px-2 bg-violet-900  text-vercel-white mt-10'>
 							Notifications
 						</span>
 						<button className=' rounded-lg'>
@@ -56,7 +59,7 @@ const Header = () => {
 						</button>
 					</div>
 					<div className='has-tooltip border-r border-gray-300 pr-3'>
-						<span className='tooltip rounded shadow-lg py-1 px-2 bg-violet-500  text-vercel-white mt-10'>
+						<span className='tooltip rounded shadow-lg py-1 px-2 bg-violet-900  text-vercel-white mt-10'>
 							Notifications
 						</span>
 						<button className='rounded-lg'>
