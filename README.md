@@ -1,5 +1,11 @@
 Welcome to Intellistock Inventory Management Web App — a comprehensive solution for efficiently creating and managing items, categories, brands, units, warehouses, and suppliers. Tailored to meet specific needs, our user-friendly interface empowers you to take control of your inventory effortlessly.
 
+![FancyWM_YVAwsZ9hhy](https://github.com/shouravrahman/intellistock/assets/73746355/dc8d6588-9789-4d0a-83e0-a4921740c16a)
+
+![FancyWM_il7lsMWhlo](https://github.com/shouravrahman/intellistock/assets/73746355/5aa84e96-abc5-47f5-8c86-b8513125c5c4)
+![FancyWM_uD1lnp0Tvf](https://github.com/shouravrahman/intellistock/assets/73746355/838b28b4-cb47-4ae5-b259-46f742ebfe4f)
+![FancyWM_ZyFWHqHaXp](https://github.com/shouravrahman/intellistock/assets/73746355/1870a675-1831-4c4b-be0a-bcdfe3ca0ac0)
+
 ## Techonologies used:
  Next.js. MongoDB · Prisma ORM · Tailwind CSS · css · react-hook-form · Zod 
 
