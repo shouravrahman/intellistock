@@ -19,7 +19,7 @@ const Supplier = async () => {
 		<>
 			<div>
 				<FixedHeader
-					title='Categories'
+					title='Suppliers'
 					href='/dashboard/inventory/supplier/new'
 				/>
 				<DataTable columns={supplierColumns} data={data} />
