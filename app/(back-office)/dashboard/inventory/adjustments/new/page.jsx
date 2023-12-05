@@ -7,7 +7,7 @@ const NewAdjustments = async () => {
 	const warehouse = await getData("warehouse");
 	return (
 		<div>
-			<FormHeader title='New Warehouse' href='/dashboard/inventory' />
+			<FormHeader title='New Adjustments' href='/dashboard/inventory' />
 			<AdjustmentForm items={items} warehouse={warehouse} />
 		</div>
 	);

@@ -39,7 +39,7 @@ export default function Tabs({ children }) {
 						<Tab.Panel
 							key={idx}
 							className={classNames(
-								"rounded-xl w-full bg-vercel-white p-3 h-full",
+								"rounded-lg w-full bg-form p-3 h-full",
 								"ring-violet-100/60 ring-offset-1 ring-offset-violet-400 focus:outline-none focus:ring-0"
 							)}
 						>

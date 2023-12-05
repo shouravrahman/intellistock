@@ -62,7 +62,15 @@ export async function POST(req) {
 }
 export async function GET() {
 	try {
-		const items = await db.item.findMany();
+		const items = await db.item.findMany({
+			orderBy: {
+				createdAt: "desc", //latest
+			},
+			include: {
+				category: true, //returns all fields same as populate()
+				// supplier: true,
+			},
+		});
 
 		return NextResponse.json(items);
 	} catch (error) {

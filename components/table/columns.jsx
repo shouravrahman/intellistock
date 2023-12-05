@@ -31,7 +31,7 @@ export const itemColumns = [
 		},
 	},
 	{
-		accessorKey: "category",
+		accessorKey: "category.title",
 		header: ({ column }) => {
 			return (
 				<button

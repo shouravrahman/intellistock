@@ -16,6 +16,7 @@ import {
 	TableRow,
 } from "@/components/table/table";
 import { useState } from "react";
+import Button from "../shared/button";
 
 const DataTable = ({ columns, data }) => {
 	const [sorting, setSorting] = useState([]);
@@ -32,7 +33,7 @@ const DataTable = ({ columns, data }) => {
 		},
 	});
 	return (
-		<div className='rounded border border-white/40 m-8 shadow-lg'>
+		<div className='rounded border   border-[#222A36] m-8 shadow-lg'>
 			<Table>
 				<TableHeader>
 					{table?.getHeaderGroups().map((headerGroup) => (
@@ -76,20 +77,19 @@ const DataTable = ({ columns, data }) => {
 				</TableBody>
 			</Table>
 			<div className=' mt-2 mx-8 flex items-center justify-end gap-2 py-4'>
-				<button
-					className='p-2 bg-white'
+				{/* <button className='px-3 py-2 rounded-md inline-flex font-semibold items-center text-white bg-[#126cfd] hover:bg-[#09367f] hover:text-white transition-all duration-200 ease'>
+					Previous
+				</button> */}
+				<Button
+					label='Previous'
 					onClick={() => table?.previousPage()}
 					disabled={!table?.getCanPreviousPage()}
-				>
-					Previous
-				</button>
-				<button
-					className='p-2 bg-white'
-					onClick={() => table?.nextPage()}
+				/>
+				<Button
+					label='Next'
+					onClick={() => console.log("clicked")}
 					disabled={!table.getCanNextPage()}
-				>
-					Next
-				</button>
+				/>
 			</div>
 		</div>
 	);
