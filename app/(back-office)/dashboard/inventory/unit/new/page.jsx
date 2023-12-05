@@ -25,7 +25,7 @@ const UnitsForm = () => {
 			<FormHeader title='New Unit' href='/dashboard/inventory' />
 			<form
 				onSubmit={handleSubmit}
-				className='w-full max-w-4xl p-8 bg-white border border-gray-200 rounded-lg shadow mx-auto mt-8'
+				className='w-full max-w-4xl p-8   bg-form text-white    rounded-lg shadow mx-auto mt-8'
 			>
 				<div className='grid gap-4 sm:grid-cols-2 sm:gap-6'>
 					<TextInput
@@ -43,7 +43,7 @@ const UnitsForm = () => {
 						className='w-full'
 					/>
 					<div className='mt-6'>
-						<label className='block mb-2 text-base font-medium text-gray-900'>
+						<label className='block mb-2 text-lg font-medium '>
 							Default Unit
 						</label>
 						<input
@@ -51,7 +51,7 @@ const UnitsForm = () => {
 							{...register("defaultUnit")}
 							className='mr-2'
 						/>
-						<span className='text-gray-700'>Set as default unit</span>
+						<span className=''>Set as default unit</span>
 					</div>
 					<div className='py-4'>
 						<SubmitButton title='Unit' isSubmitting={isSubmitting} />

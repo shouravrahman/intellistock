@@ -35,7 +35,7 @@ const DataTable = ({ columns, data }) => {
 		<div className='rounded border border-white/40 m-8 shadow-lg'>
 			<Table>
 				<TableHeader>
-					{table.getHeaderGroups().map((headerGroup) => (
+					{table?.getHeaderGroups().map((headerGroup) => (
 						<TableRow key={headerGroup.id}>
 							{headerGroup.headers.map((header) => {
 								return (
@@ -53,8 +53,8 @@ const DataTable = ({ columns, data }) => {
 					))}
 				</TableHeader>
 				<TableBody>
-					{table.getRowModel().rows?.length ? (
-						table.getRowModel().rows.map((row) => (
+					{table?.getRowModel().rows?.length ? (
+						table?.getRowModel().rows.map((row) => (
 							<TableRow
 								key={row.id}
 								data-state={row.getIsSelected() && "selected"}
@@ -78,14 +78,14 @@ const DataTable = ({ columns, data }) => {
 			<div className=' mt-2 mx-8 flex items-center justify-end gap-2 py-4'>
 				<button
 					className='p-2 bg-white'
-					onClick={() => table.previousPage()}
-					disabled={!table.getCanPreviousPage()}
+					onClick={() => table?.previousPage()}
+					disabled={!table?.getCanPreviousPage()}
 				>
 					Previous
 				</button>
 				<button
 					className='p-2 bg-white'
-					onClick={() => table.nextPage()}
+					onClick={() => table?.nextPage()}
 					disabled={!table.getCanNextPage()}
 				>
 					Next

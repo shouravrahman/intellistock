@@ -13,7 +13,7 @@ const InventoryOptionCard = ({
 	img,
 }) => {
 	return (
-		<div className='shadow-lg text-vercel-white bg-vercel-black/50 flex-center flex-col gap-4 p-6 rounded-lg '>
+		<div className='shadow-lg text-vercel-white bg-form flex-center flex-col gap-4 p-6 rounded-lg '>
 			<h2 className='text-2xl font-bold '>{title}</h2>
 			<div>
 				<Image
@@ -28,12 +28,12 @@ const InventoryOptionCard = ({
 			{enabled ? (
 				<Link
 					href={href}
-					className='px-3 py-2 rounded-md inline-flex items-center bg-primary/75 hover:bg-[#222] text-vercel-white'
+					className='px-3 py-2 rounded-md inline-flex font-semibold items-center text-white bg-[#126cfd] hover:bg-[#09367f] hover:text-white transition-all duration-200 ease'
 				>
 					{linkTitle}
 				</Link>
 			) : (
-				<button className='px-3 py-2 rounded-md inline-flex items-center text-vercel-white bg-primary/75 hover:bg-[#222]'>
+				<button className='px-3 py-2 rounded-md inline-flex font-semibold items-center text-white bg-vercel-white hover:bg-[#222]'>
 					Enable
 				</button>
 			)}

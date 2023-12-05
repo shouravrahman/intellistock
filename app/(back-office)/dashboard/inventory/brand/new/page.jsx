@@ -27,7 +27,7 @@ const BrandsForm = () => {
 			<FormHeader title='New Brand' href='/dashboard/inventory' />
 			<form
 				onSubmit={handleSubmit}
-				className='w-full max-w-4xl p-8 bg-slate-900 text-white border border-gray-200 rounded-lg shadow mx-auto mt-8'
+				className='w-full max-w-4xl p-8   bg-form text-white    rounded-lg shadow mx-auto mt-8'
 			>
 				<div className='grid gap-4 sm:grid-cols-2 sm:gap-6'>
 					<TextInput

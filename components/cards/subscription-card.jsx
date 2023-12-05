@@ -6,7 +6,7 @@ const SubscriptionCard = ({ open }) => {
 	const containerClasses = clsx("p-1", "mt-24", open ? "block" : "hidden");
 	return (
 		<div className={containerClasses}>
-			<div className='rounded-lg px-4 py-2 mt-6 bg-slate-900 text-vercel-white'>
+			<div className='rounded-lg px-4 py-2 mt-6   bg-form text-vercel-white'>
 				{/* <div className='border-b border-violet-300'> */}
 				<p className='text-sm border-l-2 border-violet-400 pl-2'>
 					Your Premium Plan&apos;s trial expires in{" "}
