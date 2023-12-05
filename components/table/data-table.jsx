@@ -32,7 +32,7 @@ const DataTable = ({ columns, data }) => {
 		},
 	});
 	return (
-		<div className='rounded-md border m-8'>
+		<div className='rounded border border-white/40 m-8 shadow-lg'>
 			<Table>
 				<TableHeader>
 					{table.getHeaderGroups().map((headerGroup) => (
