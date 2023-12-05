@@ -33,3 +33,19 @@ export async function POST(req) {
 		);
 	}
 }
+export async function GET() {
+	try {
+		const adjustements = await db.addStockAdjustment.findMany();
+
+		return NextResponse.json(adjustements);
+	} catch (error) {
+		console.error(error);
+		return NextResponse.json(
+			{
+				error,
+				message: "Failed to fetch adjustements",
+			},
+			{ status: 500 }
+		);
+	}
+}

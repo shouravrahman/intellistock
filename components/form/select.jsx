@@ -2,17 +2,22 @@
 import React from "react";
 
 const Select = ({ label, name, register, errors, options }) => {
+	console.log(options);
 	return (
 		<div className='my-4'>
-			<label className='block mb-2 text-base font-medium text-gray-900'>
+			<label className='block mb-2 text-base font-medium text-white'>
 				{label}
 			</label>
 			<select
 				{...register(name)}
 				className='w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg'
 			>
-				{options?.map((option, i) => (
-					<option className='m-2 font-semibold' key={i} value={option.id}>
+				{options?.map((option) => (
+					<option
+						className='m-2 font-semibold'
+						key={option.id}
+						value={option.id}
+					>
 						{option.title || option.value}
 					</option>
 				))}

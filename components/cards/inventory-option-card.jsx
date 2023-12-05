@@ -13,21 +13,27 @@ const InventoryOptionCard = ({
 	img,
 }) => {
 	return (
-		<div className='shadow-lg bg-white flex-center flex-col gap-4 p-6 rounded-lg'>
-			<h2 className='text-2xl font-bold'>{title}</h2>
+		<div className='shadow-lg text-vercel-white bg-vercel-black/50 flex-center flex-col gap-4 p-6 rounded-lg '>
+			<h2 className='text-2xl font-bold '>{title}</h2>
 			<div>
-				<Image src={img} width={120} height={120} alt={title} />
+				<Image
+					className='invert'
+					src={img}
+					width={120}
+					height={120}
+					alt={title}
+				/>
 			</div>
-			<p className='line-clamp-1'>{description}</p>
+			<p className='line-clamp-1 '>{description}</p>
 			{enabled ? (
 				<Link
 					href={href}
-					className='px-3 py-2 rounded-md inline-flex items-center bg-vercel-black hover:bg-[#222] text-vercel-white'
+					className='px-3 py-2 rounded-md inline-flex items-center bg-primary/75 hover:bg-[#222] text-vercel-white'
 				>
 					{linkTitle}
 				</Link>
 			) : (
-				<button className='px-3 py-2 rounded-md inline-flex items-center text-vercel-white bg-vercel-black hover:bg-[#222]'>
+				<button className='px-3 py-2 rounded-md inline-flex items-center text-vercel-white bg-primary/75 hover:bg-[#222]'>
 					Enable
 				</button>
 			)}

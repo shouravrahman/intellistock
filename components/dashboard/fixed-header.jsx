@@ -7,10 +7,10 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 
-const FixedHeader = ({ href }) => {
+const FixedHeader = ({ href, title }) => {
 	return (
-		<div className='flex-between bg-white py-5 px-6'>
-			<button className='text-2xl'>All Items</button>
+		<div className='flex-between py-5 px-6 shadow-sm'>
+			<button className='text-white text-2xl'>{title}</button>
 			<div className='flex gap-6'>
 				{/* new button*/}
 
@@ -23,7 +23,7 @@ const FixedHeader = ({ href }) => {
 				</Link>
 
 				{/* layout button */}
-				<div className='flex rounded-md overflow-hidden'>
+				<div className='flex rounded-md overflow-hidden gap-2'>
 					<button className='p-2 bg-gray-300 rounded-md border-r border-gray-200 outline-none'>
 						<List className='w-4 h-4' />
 					</button>

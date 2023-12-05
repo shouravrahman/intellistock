@@ -13,6 +13,7 @@ export default withUt({
 				"vercel-black": "#0a0a0a",
 				"vercel-white": "#ededed",
 				"vercel-hover": "hsla(0,0%,100%,.07)",
+				primary: "rgba(17 ,24, 39,1 )",
 			},
 			fontFamily: {
 				sans: ["var(--font-noto)"],

@@ -1,5 +1,5 @@
 import { Rubik, Noto_Sans } from "next/font/google";
-import "../styles/main.scss";
+import "../styles/globals.css";
 
 const noto = Noto_Sans({
 	subsets: ["latin"],
@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
 	return (
 		<html lang='en'>
 			<body
-				className={`${noto.variable} ${rubik.variable} font-sans bg-teal-100`}
+				className={`${noto.variable} ${rubik.variable} font-sans bg-primary`}
 			>
 				<main>{children}</main>
 			</body>

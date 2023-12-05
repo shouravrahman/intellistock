@@ -14,7 +14,7 @@ import Link from "next/link";
 
 const Header = () => {
 	return (
-		<div className='inventory-dashboard-header-bg  h-16 flex items-center justify-between px-8 border-b border-slate-200 shadow-sm sticky top-0 z-0'>
+		<div className='inventory-dashboard-header-bg  h-16 flex items-center justify-between px-8 border-b border-slate-200 shadow-sm z-10'>
 			{/* left segment */}
 			<div className='flex gap-3'>
 				{/* activities icon */}

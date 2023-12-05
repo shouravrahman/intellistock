@@ -16,7 +16,7 @@ const TextInput = ({
 		<div className={`${className} mt-4`}>
 			<label
 				htmlFor={name}
-				className='block mb-2 text-base font-medium text-gray-900'
+				className='block mb-2 text-base font-medium dark:text-white text-gray-900'
 			>
 				{label}
 			</label>

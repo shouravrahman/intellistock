@@ -27,7 +27,7 @@ export const options = [
 		title: "Category",
 		description: "Bundle different items together and sell them as kits",
 		linkTitle: "New Category",
-		href: "/dashboard/inventory/category/new",
+		href: "/dashboard/inventory/category",
 		enabled: true,
 		img: "/category.svg",
 	},
