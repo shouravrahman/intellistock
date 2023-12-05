@@ -29,37 +29,37 @@ export const sidebarData = [
 		submenuItems: [
 			{
 				title: "Items",
-				href: "/dashboard/inventory",
+				href: "/dashboard/inventory/items",
 				icon: <ListChecks />,
 			},
 			{
 				title: "Category",
-				href: "/dashboard/inventory",
+				href: "/dashboard/inventory/category",
 				icon: <Boxes />,
 			},
 			{
 				title: "Brand",
-				href: "/dashboard/inventory",
+				href: "/dashboard/inventory/brand",
 				icon: <Boxes />,
 			},
 			{
 				title: "Unit",
-				href: "/dashboard/inventory",
+				href: "/dashboard/inventory/unit",
 				icon: <Boxes />,
 			},
 			{
 				title: "Warehouse",
-				href: "/dashboard/inventory",
+				href: "/dashboard/inventory/warehouse",
 				icon: <Boxes />,
 			},
 			{
 				title: "Supplier",
-				href: "/dashboard/inventory",
+				href: "/dashboard/inventory/supplier",
 				icon: <Truck />,
 			},
 			{
 				title: "Inventory Adjustments",
-				href: "/dashboard/inventory",
+				href: "/dashboard/inventory/adjustments",
 				icon: <Diff />,
 			},
 		],
