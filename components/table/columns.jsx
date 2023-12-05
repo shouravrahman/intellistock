@@ -4,48 +4,42 @@ import {
 	DropdownMenuContent,
 	DropdownMenuItem,
 	DropdownMenuLabel,
-	DropdownMenuSeparator,
 	DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { ArrowUpDown, MoreHorizontal } from "lucide-react";
-export const columns = [
+export const categoryColumns = [
 	{
-		accessorKey: "status",
-		header: "Status",
-	},
-	{
-		accessorKey: "email",
+		accessorKey: "title",
 		header: ({ column }) => {
 			return (
 				<button
 					className='flex items-center justify-between'
 					onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
 				>
-					Email
+					Category Tiltle
 					<ArrowUpDown className='ml-2 h-4 w-4' />
 				</button>
 			);
 		},
 	},
 	{
-		accessorKey: "amount",
-		header: () => <div className='text-right'>Amount</div>,
-		cell: ({ row }) => {
-			console.log(row);
-			const amount = parseFloat(row.getValue("amount"));
-			const formatted = new Intl.NumberFormat("en-US", {
-				style: "currency",
-				currency: "USD",
-			}).format(amount);
-
-			return <div className='text-right font-medium'>{formatted}</div>;
+		accessorKey: "description",
+		header: ({ column }) => {
+			return (
+				<button
+					className='flex items-center justify-between'
+					onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+				>
+					Category Tiltle
+					<ArrowUpDown className='ml-2 h-4 w-4' />
+				</button>
+			);
 		},
 	},
 	{
 		id: "actions",
 		cell: ({ row }) => {
-			const payment = row.original;
-			console.log(payment);
+			const category = row.original;
 
 			return (
 				<DropdownMenu>
@@ -58,13 +52,10 @@ export const columns = [
 					<DropdownMenuContent align='end'>
 						<DropdownMenuLabel>Actions</DropdownMenuLabel>
 						<DropdownMenuItem
-							onClick={() => navigator.clipboard.writeText(payment.id)}
+							onClick={() => navigator.clipboard.writeText(category?.id)}
 						>
-							Copy payment ID
+							Copy Category ID
 						</DropdownMenuItem>
-						<DropdownMenuSeparator />
-						<DropdownMenuItem>View customer</DropdownMenuItem>
-						<DropdownMenuItem>View payment details</DropdownMenuItem>
 					</DropdownMenuContent>
 				</DropdownMenu>
 			);
