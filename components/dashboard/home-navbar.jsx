@@ -17,7 +17,7 @@ const HomeNavbar = () => {
 	return (
 		<div className='h-32 p-5 header-bg border-b border-slate-300'>
 			<div className='flex space-x-3 ml-4'>
-				<div className='flex-center rounded-lg w-12 h-12 bg-white mr-4'>
+				<div className='flex-center rounded-lg w-12 h-12 bg-primary-foreground mr-4'>
 					<Building2 />
 				</div>
 				<div className='flex flex-col '>

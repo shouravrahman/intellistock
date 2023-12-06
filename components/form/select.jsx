@@ -4,16 +4,16 @@ import React from "react";
 const Select = ({ label, name, register, errors, options }) => {
 	return (
 		<div className='my-4'>
-			<label className='block mb-2 text-base font-medium text-white'>
+			<label className='block mb-2 text-base font-medium text-primary-foreground'>
 				{label}
 			</label>
 			<select
 				{...register(name)}
-				className='w-full   bg-form  border-[#222A36] text-white text-base rounded-lg'
+				className='w-full   bg-form  border-[#222A36] text-primary-foreground text-base rounded-lg'
 			>
 				{options?.map((option) => (
 					<option
-						className='m-2  bg-violet-50 bg-opacity-40 text-white'
+						className='m-2  bg-violet-50 bg-opacity-40 text-primary-foreground'
 						key={option.id}
 						value={option.id}
 					>

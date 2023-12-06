@@ -46,7 +46,7 @@ const SalesOverview = () => {
 	return (
 		<div className=' bg-teal-50 border-b border-slate-300 grid grid-cols-12 gap-8'>
 			{/* sales activity */}
-			<div className='border-r border-slate-200 col-span-8 p-8'>
+			<div className='border-r border-border col-span-8 p-8'>
 				<h2 className='mb-6 text-xl'>Sales Activity</h2>
 				{/* single card */}
 				<div className='grid grid-cols-4 gap-4 pr-8'>

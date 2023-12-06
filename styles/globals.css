@@ -3,73 +3,49 @@
 @tailwind components;
 @tailwind utilities;
 /* Box-sizing reset */
-html {
-	box-sizing: border-box;
+@layer base {
+	:root {
+		--background: #ededed; /* Use the vercel-white color */
+		--foreground: #0a0a0a; /* Use the vercel-black color */
+		--primary: #101319;
+		--primary-foreground: #ededed; /* Use the vercel-white color */
+		--border: #0a0a0a; /* Use the vercel-black color */
+		--form: #151a22;
+		--input: #0a0a0a; /* Use the vercel-black color */
+		--accent: hsla(0, 0%, 100%, 0.07);
+		--ring: #ededed; /* Use the vercel-white color */
+		--radius: 0.5rem;
+		--sidebar-background-gradient: ;
+		--inventory-header-background-gradient: ;
+	}
 }
 
-*,
-*:before,
-*:after {
-	box-sizing: inherit;
-}
-
-/* Remove default margin and padding for headings and paragraphs */
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
-	margin: 0;
-	padding: 0;
-}
-
-/* Remove default list styles for ul and ol */
-ul,
-ol {
-	list-style: none;
-}
-
-/* Remove default styles for links */
-a {
-	text-decoration: none;
-	color: inherit;
-}
-
-/* Remove default styles for form elements */
-button,
-input,
-optgroup,
-select,
-textarea {
-	margin: 0;
-	font: inherit;
-	color: inherit;
-}
-
-/* Normalize heading margins */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	margin: 0;
-	font-size: inherit;
-	font-weight: inherit;
+@media (prefers-color-scheme: dark) {
+	:root {
+		/* Your dark mode colors */
+		--background: #0a0a0a; /* Use the vercel-black color */
+		--foreground: #ededed; /* Use the vercel-white color */
+		--primary: #ededed; /* Use the vercel-white color */
+		--primary-foreground: #0a0a0a; /* Use the vercel-black color */
+		--border: #0a0a0a; /* Use the vercel-black color */
+		--form: #151a22;
+		--input: #0a0a0a; /* Use the vercel-black color */
+		--accent: hsla(0, 0%, 100%, 0.07);
+		--ring: #ededed; /* Use the vercel-white color */
+		--sidebar-background-gradient: ;
+		--inventory-header-background-gradient: ;
+	}
 }
 
 /* Remove border when inside a focused fieldset */
-button,
+/* button,
 input,
 select,
 textarea {
 	&:focus {
 		outline: 0;
 	}
-}
+} */
 
 /* Image styling */
 img {
@@ -224,4 +200,3 @@ select:focus {
 select::-ms-expand {
 	display: none;
 }
-

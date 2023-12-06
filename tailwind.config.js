@@ -2,6 +2,7 @@
 import { withUt } from "uploadthing/tw";
 
 export default withUt({
+	darkMode: ["class"],
 	content: [
 		"./pages/**/*.{js,ts,jsx,tsx,mdx}",
 		"./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -10,12 +11,21 @@ export default withUt({
 	theme: {
 		extend: {
 			colors: {
-				"vercel-black": "#0a0a0a",
-				"vercel-white": "#ededed",
 				"vercel-hover": "hsla(0,0%,100%,.07)",
-				primary: "#101319",
-				secondary: "#1B1F2A",
-				form: "#151a22",
+				border: "hsl(var(--border))",
+				ring: "hsl(var(--ring))",
+				background: "hsl(var(--background))",
+				foreground: "hsl(var(--foreground))",
+				primary: {
+					DEFAULT: "hsl(var(--primary))",
+					foreground: "hsl(var(--primary-foreground))",
+				},
+			},
+			borderRadius: {
+				xl: `calc(var(--radius) + 4px)`,
+				lg: `var(--radius)`,
+				md: `calc(var(--radius) - 2px)`,
+				sm: "calc(var(--radius) - 4px)",
 			},
 			fontFamily: {
 				sans: ["var(--font-noto)"],

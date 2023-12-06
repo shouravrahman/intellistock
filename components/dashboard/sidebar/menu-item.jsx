@@ -11,7 +11,7 @@ const MenuItem = ({ menu, open, subMenuOpen, toggleSubMenu }) => {
 	return (
 		<li
 			className={clsx(
-				"text-vercel-white",
+				"text-primary-foreground",
 				"text-sm",
 				"flex",
 				"items-center",

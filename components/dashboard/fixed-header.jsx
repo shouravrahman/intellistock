@@ -10,7 +10,7 @@ import Link from "next/link";
 const FixedHeader = ({ href, title }) => {
 	return (
 		<div className='flex-between py-5 px-6 shadow-sm'>
-			<button className='text-white text-2xl'>{title}</button>
+			<button className='text-primary-foreground text-2xl'>{title}</button>
 			<div className='flex gap-6'>
 				{/* new button*/}
 
@@ -18,8 +18,8 @@ const FixedHeader = ({ href, title }) => {
 					href={href}
 					className='flex-between px-3 py-2  rounded-md bg-violet-600'
 				>
-					<Plus className='h-6 w-6 text-vercel-white' />
-					<span className=' text-vercel-white ml-2'>New</span>
+					<Plus className='h-6 w-6 text-primary-foreground' />
+					<span className=' text-primary-foreground ml-2'>New</span>
 				</Link>
 
 				{/* layout button */}
@@ -37,7 +37,7 @@ const FixedHeader = ({ href, title }) => {
 					<MoreHorizontal className='w-4 h-4' />
 				</button>
 				{/* help button */}
-				<button className='p-2 bg-violet-600 text-vercel-white rounded-md'>
+				<button className='p-2 bg-violet-600 text-primary-foreground rounded-md'>
 					<HelpCircle className='w-5 h-5' />
 				</button>
 			</div>

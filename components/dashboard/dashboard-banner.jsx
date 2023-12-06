@@ -12,7 +12,7 @@ const DashboardBanner = () => {
 	return (
 		<>
 			{showBanner && (
-				<div className='overflow-hidden grid grid-cols-12 bg-white py-6 px-16 text-black gap-4'>
+				<div className='overflow-hidden grid grid-cols-12 bg-background py-6 px-16 text-black gap-4'>
 					<div className='col-span-2 pt-2'>
 						<CreditCard className='w-16 h-16 text-slate-500' />
 					</div>
@@ -29,7 +29,7 @@ const DashboardBanner = () => {
 
 					<div className='col-span-3 flex items-center justify-end'>
 						<button
-							className='text-vercel-white uppercase py-2.5 px-8 bg-violet-500 focus:outline-none rounded-lg'
+							className='text-primary-foreground uppercase py-2.5 px-8 bg-violet-500 focus:outline-none rounded-lg'
 							onClick={handleCloseBanner}
 						>
 							Enable

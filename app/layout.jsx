@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
 	return (
 		<html lang='en'>
 			<body
-				className={`${noto.variable} ${rubik.variable} font-sans bg-primary`}
+				className={`${noto.variable} ${rubik.variable} font-sans bg-background`}
 			>
 				<main>{children}</main>
 			</body>

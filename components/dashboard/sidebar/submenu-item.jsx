@@ -10,7 +10,7 @@ const SubMenuItem = ({ submenuItem }) => {
 	return (
 		<li
 			className={clsx(
-				"text-vercel-white",
+				"text-primary-foreground",
 
 				"flex-between",
 				"ml-4",
