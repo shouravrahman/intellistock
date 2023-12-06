@@ -87,7 +87,7 @@ const DataTable = ({ columns, data }) => {
 				/>
 				<Button
 					label='Next'
-					onClick={() => console.log("clicked")}
+					onClick={() => table?.nextPage()}
 					disabled={!table.getCanNextPage()}
 				/>
 			</div>
