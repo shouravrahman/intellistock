@@ -1,5 +1,3 @@
-export const runtime = edge;
-
 import Sidebar from "@/components/dashboard/sidebar";
 
 export default function Home() {
