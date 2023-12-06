@@ -19,7 +19,7 @@ const Unit = async () => {
 		<>
 			<div>
 				<FixedHeader title='units' href='/dashboard/inventory/unit/new' />
-				<DataTable columns={unitColumns} data={data} />
+				<DataTable columns={unitColumns} data={data || []} />
 			</div>
 			{/* table */}
 		</>

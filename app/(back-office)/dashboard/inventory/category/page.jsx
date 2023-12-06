@@ -22,7 +22,7 @@ const Category = async () => {
 					title='Categories'
 					href='/dashboard/inventory/category/new'
 				/>
-				<DataTable columns={categoryColumns} data={data} />
+				<DataTable columns={categoryColumns} data={data || []} />
 			</div>
 			{/* table */}
 		</>

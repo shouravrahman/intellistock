@@ -19,7 +19,7 @@ const Items = async () => {
 		<>
 			<div>
 				<FixedHeader title='All Items' href='/dashboard/inventory/items/new' />
-				<DataTable columns={itemColumns} data={data} />
+				<DataTable columns={itemColumns} data={data || []} />
 			</div>
 			{/* table */}
 		</>

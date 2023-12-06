@@ -22,7 +22,7 @@ const Supplier = async () => {
 					title='Suppliers'
 					href='/dashboard/inventory/supplier/new'
 				/>
-				<DataTable columns={supplierColumns} data={data} />
+				<DataTable columns={supplierColumns} data={data || []} />
 			</div>
 			{/* table */}
 		</>
