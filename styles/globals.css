@@ -5,35 +5,95 @@
 /* Box-sizing reset */
 @layer base {
 	:root {
-		--background: #ededed; /* Use the vercel-white color */
-		--foreground: #0a0a0a; /* Use the vercel-black color */
-		--primary: #101319;
-		--primary-foreground: #ededed; /* Use the vercel-white color */
-		--border: #0a0a0a; /* Use the vercel-black color */
-		--form: #151a22;
-		--input: #0a0a0a; /* Use the vercel-black color */
-		--accent: hsla(0, 0%, 100%, 0.07);
-		--ring: #ededed; /* Use the vercel-white color */
+		--background: 0deg 0% 93%;
+		--foreground: 0deg 0% 4%;
+		--color-primary: 198deg 93% 60%;
+		--primary-foreground: 0deg 0% 93%;
+		--border: 0deg 0% 93%;
+		--form: 215deg 20% 13%;
+		--table: 0deg 0% 93%; /* Placeholder color for table */
+		--table-hover: 0deg 0% 93%; /* Placeholder color for table hover */
+		--card: 0deg 0% 93%; /* Placeholder color for card background */
+		--card-foreground: 0deg 0% 93%;
+		--btn: 0deg 0% 93%; /* Placeholder color for card foreground */
+		--btn-hover: 0deg 0% 93%; /* Placeholder color for button hover */
+		--tooltips: 0deg 0% 93%; /* Placeholder color for tooltips */
+		--input: 0deg 0% 4%;
+		--accent: 0deg 0% 100% / 7%;
+		--ring: 0deg 0% 93%;
 		--radius: 0.5rem;
-		--sidebar-background-gradient: ;
-		--inventory-header-background-gradient: ;
+		--sidebar-background-gradient: linear-gradient(
+			to right,
+			hsl(var(--color-primary)),
+			var(--background)
+		);
+		--inventory-header-background-gradient: linear-gradient(
+			to right,
+			var(--accent),
+			hsl(var(--form))
+		);
 	}
-}
 
-@media (prefers-color-scheme: dark) {
-	:root {
+	@media (prefers-color-scheme: dark) {
+		:root {
+			/* Your dark mode colors */
+			--background: 0deg 0% 4%;
+			--foreground: 0deg 0% 93%;
+			--color-primary: 0deg 0% 93%;
+			--primary-foreground: 0deg 0% 4%;
+			--border: 0deg 0% 93%;
+			--form: 215deg 20% 13%;
+			--table: 0deg 0% 20%; /* Placeholder dark mode color for table */
+			--table-hover: 0deg 0% 30%; /* Placeholder dark mode color for table hover */
+			--card-background: 0deg 0% 15%; /* Placeholder dark mode color for card background */
+			--card-foreground: 0deg 0% 90%;
+			--btn: 0deg 0% 93%; /* Placeholder dark mode color for card foreground */
+			--btn-hover: 200deg 60% 50%; /* Placeholder dark mode color for button hover */
+			--tooltips: 0deg 0% 30%; /* Placeholder dark mode color for tooltips */
+			--input: 0deg 0% 4%;
+			--accent: 0deg 0% 100% / 7%;
+			--ring: 0deg 0% 93%;
+			--sidebar-background-gradient: linear-gradient(
+				to right,
+				var(--background),
+				hsl(var(--color-primary))
+			);
+			--inventory-header-background-gradient: linear-gradient(
+				to right,
+				hsl(var(--form)),
+				var(--accent)
+			);
+		}
+	}
+
+	:root[data-theme="dark"] {
 		/* Your dark mode colors */
-		--background: #0a0a0a; /* Use the vercel-black color */
-		--foreground: #ededed; /* Use the vercel-white color */
-		--primary: #ededed; /* Use the vercel-white color */
-		--primary-foreground: #0a0a0a; /* Use the vercel-black color */
-		--border: #0a0a0a; /* Use the vercel-black color */
-		--form: #151a22;
-		--input: #0a0a0a; /* Use the vercel-black color */
-		--accent: hsla(0, 0%, 100%, 0.07);
-		--ring: #ededed; /* Use the vercel-white color */
-		--sidebar-background-gradient: ;
-		--inventory-header-background-gradient: ;
+		--background: 0deg 0% 4%;
+		--foreground: 0deg 0% 93%;
+		--color-primary: 0deg 0% 93%;
+		--primary-foreground: 0deg 0% 4%;
+		--border: 0deg 0% 4%;
+		--form: 215deg 20% 13%;
+		--table: 0deg 0% 30%; /* Placeholder dark mode color for table */
+		--table-hover: 0deg 0% 40%; /* Placeholder dark mode color for table hover */
+		--card-background: 0deg 0% 25%; /* Placeholder dark mode color for card background */
+		--card-foreground: 0deg 0% 85%;
+		--btn: 0deg 0% 93%; /* Placeholder dark mode color for card foreground */
+		--btn-hover: 200deg 60% 40%; /* Placeholder dark mode color for button hover */
+		--tooltips: 0deg 0% 40%; /* Placeholder dark mode color for tooltips */
+		--input: 0deg 0% 4%;
+		--accent: 0deg 0% 100% / 7%;
+		--ring: 237deg 0% 93%; /* Use the vercel-white color */
+		--sidebar-background-gradient: linear-gradient(
+			to right,
+			var(--background),
+			hsl(var(--color-primary))
+		);
+		--inventory-header-background-gradient: linear-gradient(
+			to right,
+			hsl(var(--form)),
+			var(--accent)
+		);
 	}
 }
 
@@ -145,9 +205,10 @@ img {
 }
 
 .header-bg {
-	background-image: url("/circuit.png");
+	/* background-image: url("/circuit.png");
 	background-size: contain;
-	background-position: center center;
+	background-position: center center; */
+	background-color: black;
 }
 
 /* Scrollbar styling */

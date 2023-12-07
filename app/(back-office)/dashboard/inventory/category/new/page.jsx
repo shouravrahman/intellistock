@@ -31,7 +31,7 @@ const NewCategory = () => {
 			{/* form */}
 			<form
 				onSubmit={handleSubmit}
-				className='w-full max-w-4xl p-4   bg-form text-primary-foreground   rounded-lg shadow sm:p-6 md:p-8 mx-auto mt-8'
+				className='w-full max-w-4xl p-4   bg-form text-foreground   rounded-lg shadow sm:p-6 md:p-8 mx-auto mt-8'
 			>
 				<div className='grid gap-4 sm:grid-cols-2 sm:gap-6'>
 					<TextInput

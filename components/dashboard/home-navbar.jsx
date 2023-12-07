@@ -15,12 +15,12 @@ const HomeNavbar = () => {
 		{ title: "Announcements", href: "/dashboard/home/announcements" },
 	];
 	return (
-		<div className='h-32 p-5 header-bg border-b border-slate-300'>
+		<div className='h-32 p-5 header-bg border-b border-border'>
 			<div className='flex space-x-3 ml-4'>
-				<div className='flex-center rounded-lg w-12 h-12 bg-primary-foreground mr-4'>
+				<div className='flex-center rounded-lg w-12 h-12 bg-form text-foreground mr-4'>
 					<Building2 />
 				</div>
-				<div className='flex flex-col '>
+				<div className='flex flex-col text-foreground/80'>
 					<p className='font-semibold'>Hello, Shourav Rahman</p>
 					<span className='italic'>Sylhet, Bangladesh</span>
 				</div>
@@ -32,9 +32,9 @@ const HomeNavbar = () => {
 						<Link
 							key={idx}
 							href={item.href}
-							className={`py-[1px] font-noto font-normal  mt-2  ${
+							className={`py-[1px] font-noto font-normal text-foreground/80  mt-2  ${
 								pathname === item.href
-									? "border-b-4 border-black transition-all ease-in z-10"
+									? "border-b-4 border-foreground text-accent transition-all ease-in z-10"
 									: ""
 							}`}
 						>

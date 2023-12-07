@@ -44,12 +44,17 @@ const Sidebar = () => {
 		"h-16",
 		"w-16",
 		"z-15",
-		"text-primary-foreground",
+		"opacity-50",
+		"hover:opacity-100",
+		"text-foreground",
 		"rounded-full",
 		"absolute",
 		"top-2/3",
 		"transform",
 		"-translate-y-1/2",
+		"transition-all",
+		"duration-300",
+		"ease-in",
 		"-right-5",
 		"outline-none",
 		"border-violet-800",
@@ -66,13 +71,13 @@ const Sidebar = () => {
 	const searchInputClasses = clsx(
 		"text-base",
 		"w-full",
-		"bg-violet-50",
+		"bg-form",
 		"bg-opacity-40",
 		"py-1",
 		"rounded-lg",
-		"text-primary-foreground",
+		"text-foreground",
 		"ml-1",
-		"placeholder-primary-foreground",
+		"placeholder-foreground",
 		"focus:outline-none",
 		"px-3",
 		!open && "hidden"
@@ -87,7 +92,12 @@ const Sidebar = () => {
 					setSubMenuOpen({});
 				}}
 			>
-				<Image src='/arrow.svg' alt='arrow icon' width={100} height={100} />
+				<Image
+					src='/right-arrow-white.svg'
+					alt='arrow icon'
+					width={50}
+					height={50}
+				/>
 			</button>
 
 			{/* <Warehouse className={warehouseClasses} />
@@ -103,7 +113,7 @@ const Sidebar = () => {
 				/>
 			</div>
 
-			<div className='flex items-center rounded-md mt-10 py-2'>
+			{/* <div className='flex items-center rounded-md mt-10 py-2'>
 				<ScanSearch
 					color='#ffffff'
 					className={clsx(
@@ -123,9 +133,9 @@ const Sidebar = () => {
 					placeholder='Search'
 					className={searchInputClasses}
 				/>
-			</div>
+			</div> */}
 
-			<ul className='pt-2'>
+			<ul className='mt-24'>
 				{sidebarData.map((menu, idx) => (
 					<div key={idx}>
 						<MenuItem

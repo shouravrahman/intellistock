@@ -44,7 +44,7 @@ const SalesOverview = () => {
 		{ title: "Qunatity to be recieved", number: 8 },
 	];
 	return (
-		<div className=' bg-teal-50 border-b border-slate-300 grid grid-cols-12 gap-8'>
+		<div className=' bg-form/70 border-b border-border grid grid-cols-12 gap-8 text-foreground/80'>
 			{/* sales activity */}
 			<div className='border-r border-border col-span-8 p-8'>
 				<h2 className='mb-6 text-xl'>Sales Activity</h2>
@@ -56,7 +56,7 @@ const SalesOverview = () => {
 				</div>
 			</div>
 			{/* inventory summary */}
-			<div className='col-span-4 p-8'>
+			<div className='col-span-4 p-8 '>
 				<h2 className='mb-6 text-xl'>Inventory Summary</h2>
 
 				{inventorySummary.map((item, idx) => {

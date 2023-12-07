@@ -33,7 +33,7 @@ const DataTable = ({ columns, data }) => {
 		},
 	});
 	return (
-		<div className='rounded border   border-[#222A36] m-8 shadow-lg'>
+		<div className='m-8 shadow-lg border border-border/20'>
 			<Table>
 				<TableHeader>
 					{table?.getHeaderGroups().map((headerGroup) => (
@@ -77,7 +77,7 @@ const DataTable = ({ columns, data }) => {
 				</TableBody>
 			</Table>
 			<div className=' mt-2 mx-8 flex items-center justify-end gap-2 py-4'>
-				{/* <button className='px-3 py-2 rounded-md inline-flex font-semibold items-center text-primary-foreground bg-[#126cfd] hover:bg-[#09367f] hover:text-primary-foreground transition-all duration-200 ease'>
+				{/* <button className='px-3 py-2 rounded-md inline-flex font-semibold items-center text-foreground bg-[#126cfd] hover:bg-[#09367f] hover:text-foreground transition-all duration-200 ease'>
 					Previous
 				</button> */}
 				<Button

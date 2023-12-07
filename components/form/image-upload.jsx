@@ -25,7 +25,7 @@ const ImageUpload = ({
 					<button
 						onClick={() => setImageUrl("")}
 						type='button'
-						className='flex space-x-3 bg-primary rounded-md shadow text-primary-foreground py-2 px-4'
+						className='flex space-x-3 bg-primary rounded-md shadow text-foreground py-2 px-4'
 					>
 						<Pencil className='w-4 h-4' />
 						<span>Change Image</span>

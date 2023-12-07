@@ -9,7 +9,7 @@ const Error = () => {
 				<Image width='100' height='100' src={err} alt='404 icon' />
 			</div>
 			<div className='text-center xl:max-w-4xl'>
-				<h1 className='mb-3 text-2xl font-bold leading-tight text-gray-900 sm:text-4xl lg:text-5xl dark:text-primary-foreground'>
+				<h1 className='mb-3 text-2xl font-bold leading-tight text-gray-900 sm:text-4xl lg:text-5xl dark:text-foreground'>
 					Something went wrong!
 				</h1>
 				<p className='mb-5 text-base font-normal text-gray-500 md:text-lg dark:text-gray-400'>
@@ -17,7 +17,7 @@ const Error = () => {
 				</p>
 				<Link
 					href='/'
-					className='text-primary-foreground bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center mr-3 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800'
+					className='text-foreground bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center mr-3 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800'
 				>
 					<svg
 						className='mr-2 -ml-1 w-5 h-5'

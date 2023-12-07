@@ -11,7 +11,7 @@ const MenuItem = ({ menu, open, subMenuOpen, toggleSubMenu }) => {
 	return (
 		<li
 			className={clsx(
-				"text-primary-foreground",
+				"text-foreground",
 				"text-sm",
 				"flex",
 				"items-center",
@@ -33,7 +33,8 @@ const MenuItem = ({ menu, open, subMenuOpen, toggleSubMenu }) => {
 					"text-base",
 					"font-medium",
 					"flex-1",
-					"duration-300"
+					"duration-300",
+					"text-foreground"
 				)}
 				href={menu.href}
 			>

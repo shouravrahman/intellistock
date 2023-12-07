@@ -2,7 +2,7 @@
 import { withUt } from "uploadthing/tw";
 
 export default withUt({
-	darkMode: ["class"],
+	darkMode: "media",
 	content: [
 		"./pages/**/*.{js,ts,jsx,tsx,mdx}",
 		"./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -20,6 +20,14 @@ export default withUt({
 					DEFAULT: "hsl(var(--primary))",
 					foreground: "hsl(var(--primary-foreground))",
 				},
+				form: "hsl(var(--form))",
+				table: "hsl(var(--table))",
+				"table-hover": "hsl(var(--table-hover))",
+				card: "hsl(var(--card))",
+				"card-foreground": "hsl(var(--card-foreground))",
+				"btn-hover": "hsl(var(--btn-hover))",
+				tooltips: "hsl(var(--tooltips))",
+				btn: "hsl(var(--btn))",
 			},
 			borderRadius: {
 				xl: `calc(var(--radius) + 4px)`,

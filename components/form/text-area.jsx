@@ -13,7 +13,7 @@ const TextArea = ({
 		<div className={`${className} mt-4`}>
 			<label
 				htmlFor={name}
-				className='block mb-2 text-base font-medium text-primary-foreground leading-6'
+				className='block mb-2 text-base font-medium text-foreground leading-6'
 			>
 				{label}
 			</label>
@@ -21,7 +21,7 @@ const TextArea = ({
 				rows={5}
 				name={name}
 				id={name}
-				className={`w-full bg-secondary border-[#222A36] text-primary-foreground text-lg rounded-lg ${
+				className={`w-full bg-form/80 border-border/20 text-foreground text-lg rounded-lg ${
 					errors && errors[name] ? "border-red-500" : ""
 				}`}
 				placeholder={label}

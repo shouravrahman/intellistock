@@ -19,7 +19,7 @@ const Header = () => {
 			<div className='flex gap-3'>
 				{/* activities icon */}
 				<button>
-					<History className='w-6 h-6 text-primary-foreground' />
+					<History className='w-6 h-6 text-foreground' />
 				</button>
 				{/* search */}
 				<SearchInput />
@@ -32,10 +32,10 @@ const Header = () => {
 				<div className='has-tooltip pr-3 border-r border-gray-300'>
 					<button className='rounded-lg bg-violet-700 p-1 '>
 						<Link href='/dashboard/inventory/items/new'>
-							<Plus className='h-8 w-8 p-1 text-primary-foreground' />
+							<Plus className='h-8 w-8 p-1 text-foreground' />
 						</Link>
 					</button>
-					<span className='tooltip rounded shadow-lg py-1 px-2 bg-violet-900 text-primary-foreground mt-10'>
+					<span className='tooltip rounded shadow-lg py-1 px-2 bg-violet-900 text-foreground mt-10'>
 						Create
 					</span>
 				</div>
@@ -43,27 +43,27 @@ const Header = () => {
 				{/* 3 icons */}
 				<div className='flex justify-center gap-4 items-center pl-3'>
 					<div className='has-tooltip  '>
-						<span className='tooltip rounded shadow-lg py-1 px-2 bg-violet-900 text-primary-foreground mt-10'>
+						<span className='tooltip rounded shadow-lg py-1 px-2 bg-violet-900 text-foreground mt-10'>
 							Profile
 						</span>
 						<button className=' rounded-lg '>
-							<User2 className='h-6 w-6 text-primary-foreground' />
+							<User2 className='h-6 w-6 text-foreground' />
 						</button>
 					</div>
 					<div className='has-tooltip  '>
-						<span className='tooltip rounded shadow-lg py-1 px-2 bg-violet-900  text-primary-foreground mt-10'>
+						<span className='tooltip rounded shadow-lg py-1 px-2 bg-violet-900  text-foreground mt-10'>
 							Notifications
 						</span>
 						<button className=' rounded-lg'>
-							<BellDot className='h-6 w-6 text-primary-foreground' />
+							<BellDot className='h-6 w-6 text-foreground' />
 						</button>
 					</div>
 					<div className='has-tooltip border-r border-gray-300 pr-3'>
-						<span className='tooltip rounded shadow-lg py-1 px-2 bg-violet-900  text-primary-foreground mt-10'>
+						<span className='tooltip rounded shadow-lg py-1 px-2 bg-violet-900  text-foreground mt-10'>
 							Notifications
 						</span>
 						<button className='rounded-lg'>
-							<Settings className='h-6 w-6 text-primary-foreground' />
+							<Settings className='h-6 w-6 text-foreground' />
 						</button>
 					</div>
 				</div>
@@ -72,9 +72,9 @@ const Header = () => {
 
 				<div className='flex gap-3 pl-3 items-center justify-center'>
 					{/* name dropdown */}
-					<button className='flex items-center text-primary-foreground'>
+					<button className='flex items-center text-foreground'>
 						<span>Mike</span>
-						<ChevronDown className='w-4 h-4 text-primary-foreground' />
+						<ChevronDown className='w-4 h-4 text-foreground' />
 					</button>
 
 					<button>
@@ -87,7 +87,7 @@ const Header = () => {
 						/>
 					</button>
 					<button className=''>
-						<LayoutGrid className='w-6 h-6  text-primary-foreground' />
+						<LayoutGrid className='w-6 h-6  text-foreground' />
 					</button>
 				</div>
 			</div>

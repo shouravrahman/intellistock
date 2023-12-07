@@ -26,7 +26,7 @@ export default function Tabs({ children }) {
 									"ring-ring ring-offset-1 ring-offset-violet-400 focus:outline-none focus:ring-0",
 									selected
 										? "bg-primary-foreground text-primary shadow"
-										: "text-primary-foreground hover:bg-primary-foreground/[0.12] hover:text-primary-foreground"
+										: "text-foreground hover:bg-primary-foreground/[0.12] hover:text-foreground"
 								)
 							}
 						>

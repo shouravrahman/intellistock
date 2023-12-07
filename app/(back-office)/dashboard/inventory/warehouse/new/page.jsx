@@ -34,7 +34,7 @@ const WarehouseForm = () => {
 			<FormHeader title='New Warehouse' href='/dashboard/inventory' />
 			<form
 				onSubmit={handleSubmit}
-				className='w-full max-w-4xl p-8   bg-form text-primary-foreground    rounded-lg shadow mx-auto mt-8'
+				className='w-full max-w-4xl p-8   bg-form text-foreground    rounded-lg shadow mx-auto mt-8'
 			>
 				<div className='grid gap-4 sm:grid-cols-2 sm:gap-6'>
 					<TextInput
