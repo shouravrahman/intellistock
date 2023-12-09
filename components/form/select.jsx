@@ -9,7 +9,7 @@ const Select = ({ label, name, register, errors, options }) => {
 			</label>
 			<select
 				{...register(name)}
-				className='w-full   bg-form  border-border/20 text-foreground text-base rounded-lg'
+				className='w-full   bg-form  border-border text-foreground text-base rounded-lg'
 			>
 				{options?.map((option) => (
 					<option

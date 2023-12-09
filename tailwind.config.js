@@ -2,7 +2,6 @@
 import { withUt } from "uploadthing/tw";
 
 export default withUt({
-	darkMode: "media",
 	content: [
 		"./pages/**/*.{js,ts,jsx,tsx,mdx}",
 		"./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -11,23 +10,24 @@ export default withUt({
 	theme: {
 		extend: {
 			colors: {
-				"vercel-hover": "hsla(0,0%,100%,.07)",
-				border: "hsl(var(--border))",
-				ring: "hsl(var(--ring))",
-				background: "hsl(var(--background))",
-				foreground: "hsl(var(--foreground))",
+				vercelHover: "hsl(218, 12%, 83%);",
+				cardForeground: "var(--card-color-foreground))",
+				btnHover: "var(--color-btnHover)",
+				border: "var(--color-border)",
+				ring: "var(--color-ring)",
+				background: "var(--color-background)",
+				foreground: "var(--color-foreground)",
 				primary: {
-					DEFAULT: "hsl(var(--primary))",
-					foreground: "hsl(var(--primary-foreground))",
+					DEFAULT: "var(--color-primary)",
+					foreground: "var(--color-primary-foreground)",
 				},
-				form: "hsl(var(--form))",
-				table: "hsl(var(--table))",
-				"table-hover": "hsl(var(--table-hover))",
-				card: "hsl(var(--card))",
-				"card-foreground": "hsl(var(--card-foreground))",
-				"btn-hover": "hsl(var(--btn-hover))",
-				tooltips: "hsl(var(--tooltips))",
-				btn: "hsl(var(--btn))",
+				form: "var(--color-form)",
+				table: "var(--color-table)",
+				tableHover: "var(--color-table-hover)",
+				card: "var(--color-card)",
+				tooltips: "var(--color-tooltips)",
+				btn: "var(--color-btn)",
+				accent: "var(--color-accent)",
 			},
 			borderRadius: {
 				xl: `calc(var(--radius) + 4px)`,

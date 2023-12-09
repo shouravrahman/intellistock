@@ -5,108 +5,62 @@
 /* Box-sizing reset */
 @layer base {
 	:root {
-		--background: 0deg 0% 93%;
-		--foreground: 0deg 0% 4%;
-		--color-primary: 198deg 93% 60%;
-		--primary-foreground: 0deg 0% 93%;
-		--border: 0deg 0% 93%;
-		--form: 215deg 20% 13%;
-		--table: 0deg 0% 93%; /* Placeholder color for table */
-		--table-hover: 0deg 0% 93%; /* Placeholder color for table hover */
-		--card: 0deg 0% 93%; /* Placeholder color for card background */
-		--card-foreground: 0deg 0% 93%;
-		--btn: 0deg 0% 93%; /* Placeholder color for card foreground */
-		--btn-hover: 0deg 0% 93%; /* Placeholder color for button hover */
-		--tooltips: 0deg 0% 93%; /* Placeholder color for tooltips */
-		--input: 0deg 0% 4%;
-		--accent: 0deg 0% 100% / 7%;
-		--ring: 0deg 0% 93%;
-		--radius: 0.5rem;
-		--sidebar-background-gradient: linear-gradient(
-			to right,
-			hsl(var(--color-primary)),
-			var(--background)
-		);
-		--inventory-header-background-gradient: linear-gradient(
-			to right,
-			var(--accent),
-			hsl(var(--form))
-		);
+		--color-background: hsl(0, 0%, 98%); /* Light background */
+		--color-foreground: hsl(210, 35%, 10%); /* Dark foreground text */
+		--color-primary: hsl(288, 70%, 48%); /* Primary color for emphasis */
+		--color-primary-foreground: hsl(
+			240,
+			100%,
+			98%
+		); /* Foreground text on primary color */
+		--color-border: hsla(180, 1%, 18%, 0.171); /* Border color */
+		--color-form: hsl(0, 23%, 92%); /* Form elements background */
+		--color-table: hsl(0, 0%, 100%); /* Table background */
+		--color-table-hover: hsl(210, 24%, 95%); /* Table hover background */
+		--color-card: hsl(0, 0%, 100%); /* Card background */
+		--color-card-foreground: hsl(210, 31%, 25%); /* Foreground text on card */
+		--color-btn: hsl(288, 70%, 48%); /* Button background */
+		--color-btnHover: hsl(204, 55%, 48%); /* Button hover background */
+		--color-tooltips: hsl(192, 9%, 58%); /* Tooltip color */
+		--color-input: hsl(192, 12%, 85%); /* Input background */
+		--color-accent: hsla(0, 55%, 41%, 0.8); /* Light accent color */
+		--color-ring: hsl(210, 20%, 89%); /* Ring color */
+		--radius: 0.5rem; /* Border radius */
+		/* Inventory header gradient */
 	}
-
-	@media (prefers-color-scheme: dark) {
-		:root {
-			/* Your dark mode colors */
-			--background: 0deg 0% 4%;
-			--foreground: 0deg 0% 93%;
-			--color-primary: 0deg 0% 93%;
-			--primary-foreground: 0deg 0% 4%;
-			--border: 0deg 0% 93%;
-			--form: 215deg 20% 13%;
-			--table: 0deg 0% 20%; /* Placeholder dark mode color for table */
-			--table-hover: 0deg 0% 30%; /* Placeholder dark mode color for table hover */
-			--card-background: 0deg 0% 15%; /* Placeholder dark mode color for card background */
-			--card-foreground: 0deg 0% 90%;
-			--btn: 0deg 0% 93%; /* Placeholder dark mode color for card foreground */
-			--btn-hover: 200deg 60% 50%; /* Placeholder dark mode color for button hover */
-			--tooltips: 0deg 0% 30%; /* Placeholder dark mode color for tooltips */
-			--input: 0deg 0% 4%;
-			--accent: 0deg 0% 100% / 7%;
-			--ring: 0deg 0% 93%;
-			--sidebar-background-gradient: linear-gradient(
-				to right,
-				var(--background),
-				hsl(var(--color-primary))
-			);
-			--inventory-header-background-gradient: linear-gradient(
-				to right,
-				hsl(var(--form)),
-				var(--accent)
-			);
-		}
-	}
-
-	:root[data-theme="dark"] {
-		/* Your dark mode colors */
-		--background: 0deg 0% 4%;
-		--foreground: 0deg 0% 93%;
-		--color-primary: 0deg 0% 93%;
-		--primary-foreground: 0deg 0% 4%;
-		--border: 0deg 0% 4%;
-		--form: 215deg 20% 13%;
-		--table: 0deg 0% 30%; /* Placeholder dark mode color for table */
-		--table-hover: 0deg 0% 40%; /* Placeholder dark mode color for table hover */
-		--card-background: 0deg 0% 25%; /* Placeholder dark mode color for card background */
-		--card-foreground: 0deg 0% 85%;
-		--btn: 0deg 0% 93%; /* Placeholder dark mode color for card foreground */
-		--btn-hover: 200deg 60% 40%; /* Placeholder dark mode color for button hover */
-		--tooltips: 0deg 0% 40%; /* Placeholder dark mode color for tooltips */
-		--input: 0deg 0% 4%;
-		--accent: 0deg 0% 100% / 7%;
-		--ring: 237deg 0% 93%; /* Use the vercel-white color */
-		--sidebar-background-gradient: linear-gradient(
-			to right,
-			var(--background),
-			hsl(var(--color-primary))
-		);
-		--inventory-header-background-gradient: linear-gradient(
-			to right,
-			hsl(var(--form)),
-			var(--accent)
-		);
-	}
+	/* Background styles for specific elements */
 }
 
-/* Remove border when inside a focused fieldset */
-/* button,
-input,
-select,
-textarea {
-	&:focus {
-		outline: 0;
-	}
-} */
+.sidebar-bg {
+	/* background: linear-gradient(
+		90deg,
+		hsl(186, 43%, 82%) 0%,
+		hsl(141, 24%, 90%) 39%,
+		hsl(169, 34%, 92%) 100%
+	); */
+	/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#eeeeee+0,eeeeee+100;Grey+Flat */
+	background: linear-gradient(
+		135deg,
+		#eeeeee 0%,
+		#eeeeee 100%
+	); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
 
+.inventory-dashboard-header-bg {
+	background: linear-gradient(
+		190deg,
+		hsl(210, 22%, 95%) 0%,
+		hsl(210, 22%, 90%) 39%,
+		hsl(210, 26%, 97%) 100%
+	);
+}
+
+.header-bg {
+	/* background-image: url("/new-image.png");
+    background-size: contain;
+    background-position: center center; */
+	background: linear-gradient(hsl(0, 0%, 98%) 0%, hsl(0, 0%, 95%) 100%);
+}
 /* Image styling */
 img {
 	max-width: 100%;
@@ -181,34 +135,6 @@ img {
 .has-tooltip:hover .tooltip {
 	visibility: visible;
 	z-index: 100;
-}
-
-/* Background styles for specific elements */
-.sidebar-bg {
-	background: rgb(15, 23, 42);
-	background: linear-gradient(
-		90deg,
-		rgba(15, 23, 42, 1) 0%,
-		rgba(17, 0, 31, 1) 39%,
-		rgba(52, 52, 52, 1) 100%
-	);
-}
-
-.inventory-dashboard-header-bg {
-	background: rgb(15, 23, 42);
-	background: linear-gradient(
-		190deg,
-		rgba(15, 23, 42, 1) 0%,
-		rgba(17, 0, 31, 1) 39%,
-		rgba(52, 52, 52, 1) 100%
-	);
-}
-
-.header-bg {
-	/* background-image: url("/circuit.png");
-	background-size: contain;
-	background-position: center center; */
-	background-color: black;
 }
 
 /* Scrollbar styling */

@@ -19,8 +19,8 @@ const MenuItem = ({ menu, open, subMenuOpen, toggleSubMenu }) => {
 				"gap-x-8",
 				"cursor-pointer",
 				"p-2",
-				"hover:bg-vercel-hover",
-				pathname === menu.href && "bg-vercel-hover",
+				"hover:bg-vercelHover",
+				pathname === menu.href && "bg-vercelHover",
 
 				"rounded-md",
 				menu.spacing ? "mt-12" : "mt-3"
@@ -34,7 +34,8 @@ const MenuItem = ({ menu, open, subMenuOpen, toggleSubMenu }) => {
 					"font-medium",
 					"flex-1",
 					"duration-300",
-					"text-foreground"
+					"text-foreground/70",
+					"font-semibold"
 				)}
 				href={menu.href}
 			>

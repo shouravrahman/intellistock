@@ -22,7 +22,7 @@ const TableBody = React.forwardRef(({ className, ...props }, ref) => (
 	<tbody
 		ref={ref}
 		className={cn(
-			"[&_tr:last-child]:border-b-[1px]   border-border/20",
+			"[&_tr:last-child]:border-b-[1px]   border-border",
 			className
 		)}
 		{...props}
@@ -34,7 +34,7 @@ const TableFooter = React.forwardRef(({ className, ...props }, ref) => (
 	<tfoot
 		ref={ref}
 		className={cn(
-			"border-border/20 border-t bg-slate-100/50 font-medium [&>tr]:last:border-b-2 dark:bg-slate-800/50",
+			"border-border border-t bg-slate-100/50 font-medium [&>tr]:last:border-b-2 dark:bg-slate-800/50",
 			className
 		)}
 		{...props}
@@ -46,7 +46,7 @@ const TableRow = React.forwardRef(({ className, ...props }, ref) => (
 	<tr
 		ref={ref}
 		className={cn(
-			"border-b-[1px]   border-border/20 transition-colors hover:bg-slate-100/50 data-[state=selected]:bg-slate-100 dark:hover:bg-slate-800/50 dark:data-[state=selected]:bg-slate-800 ",
+			"border-b-[1px] border-border transition-colors hover:bg-vercelHover data-[state=selected]:bg-slate-100  ",
 			className
 		)}
 		{...props}
@@ -58,7 +58,8 @@ const TableHead = React.forwardRef(({ className, ...props }, ref) => (
 	<th
 		ref={ref}
 		className={cn(
-			"h-10 px-6 text-left align-middle font-medium text-slate-500 [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] dark:text-violet-400 border-r-[1px]   border-border/20 text-lg",
+			"h-10 px-6 text-left align-middle font-medium text-card bg-primary [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] text-lg",
+			"border-r",
 			className
 		)}
 		{...props}
@@ -70,7 +71,7 @@ const TableCell = React.forwardRef(({ className, ...props }, ref) => (
 	<td
 		ref={ref}
 		className={cn(
-			"px-6 py-2 align-middle   border-border/20 border-r-[1px] [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] ",
+			"px-6 py-2 align-middle   border-border border-r-[1px] [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] ",
 			className
 		)}
 		{...props}

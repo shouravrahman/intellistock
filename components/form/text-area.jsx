@@ -21,7 +21,7 @@ const TextArea = ({
 				rows={5}
 				name={name}
 				id={name}
-				className={`w-full bg-form/80 border-border/20 text-foreground text-lg rounded-lg ${
+				className={`w-full bg-form border-border text-foreground text-lg rounded-lg ${
 					errors && errors[name] ? "border-red-500" : ""
 				}`}
 				placeholder={label}

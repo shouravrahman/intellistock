@@ -25,7 +25,7 @@ const TextInput = ({
 				name={name}
 				id={name}
 				defaultValue={defaultValue}
-				className={`w-full bg-form/80 border-border/20  text-foreground text-sm rounded-lg ${
+				className={`w-full bg-form border-border  text-foreground text-sm rounded-lg ${
 					errors && errors[name] ? "border-red-500" : ""
 				}`}
 				autoComplete={name}

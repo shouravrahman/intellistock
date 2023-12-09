@@ -4,7 +4,7 @@ const SalesActivityCard = ({ number, title, unit, icon, href, color }) => {
 	return (
 		<Link
 			href={href}
-			className='shadow-sm px-3 py-4 border border-border rounded-lg bg-form cursor-pointer hover:border-slate-600 flex items-center flex-col gap-3 transition-all ease-in duration-200'
+			className='shadow-sm px-3 py-4 rounded-lg bg-form cursor-pointer hover:border hover:border-border flex items-center flex-col gap-3 transition-all ease-in duration-200'
 		>
 			<h4 className={`font-semibold text-3xl ${color} `}>{number}</h4>
 			<small className='text-foreground/60'>{unit}</small>

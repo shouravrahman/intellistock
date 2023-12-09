@@ -9,7 +9,7 @@ const ImageUpload = ({
 	imageUrl = "",
 	setImageUrl,
 	endpoint = "imageUploader",
-	className = "col-span-full border border-dashed rounded-lg",
+	className = "col-span-full  rounded-lg",
 }) => {
 	return (
 		<div className={className}>

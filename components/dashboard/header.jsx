@@ -32,7 +32,7 @@ const Header = () => {
 				<div className='has-tooltip pr-3 border-r border-gray-300'>
 					<button className='rounded-lg bg-violet-700 p-1 '>
 						<Link href='/dashboard/inventory/items/new'>
-							<Plus className='h-8 w-8 p-1 text-foreground' />
+							<Plus className='h-8 w-8 p-1 text-white' />
 						</Link>
 					</button>
 					<span className='tooltip rounded shadow-lg py-1 px-2 bg-violet-900 text-foreground mt-10'>

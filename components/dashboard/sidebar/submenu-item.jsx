@@ -18,15 +18,15 @@ const SubMenuItem = ({ submenuItem }) => {
 				"gap-x-8",
 				"cursor-pointer",
 				"p-2",
-				"hover:bg-vercel-hover",
+				"hover:bg-vercelHover",
 				// "ml-10",
-				pathname === submenuItem.href && "bg-vercel-hover",
+				pathname === submenuItem.href && "bg-vercelHover",
 				"rounded-md"
 			)}
 		>
 			{" "}
 			<Icon icon={submenuItem.icon} href={submenuItem.href} />
-			<Link className='text-sm font-medium flex-1' href={submenuItem.href}>
+			<Link className='text-sm font-semibold flex-1' href={submenuItem.href}>
 				{submenuItem.title}
 			</Link>
 		</li>

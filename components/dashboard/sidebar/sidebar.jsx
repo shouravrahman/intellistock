@@ -66,7 +66,8 @@ const Sidebar = () => {
 		// "px-2",
 		"transition-all duration-300 ease-in ",
 		!open && "w-40 object-contain h-28  -translate-x-14",
-		open && "w-full h-28 object-cover translate-x-0"
+		open && "w-full h-28 object-cover translate-x-0",
+		"invert"
 	);
 	const searchInputClasses = clsx(
 		"text-base",
@@ -93,7 +94,7 @@ const Sidebar = () => {
 				}}
 			>
 				<Image
-					src='/right-arrow-white.svg'
+					src='/right-arrow-dark.svg'
 					alt='arrow icon'
 					width={50}
 					height={50}

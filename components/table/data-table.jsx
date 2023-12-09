@@ -33,7 +33,7 @@ const DataTable = ({ columns, data }) => {
 		},
 	});
 	return (
-		<div className='m-8 shadow-lg border border-border/20'>
+		<div className='m-8 shadow-lg border border-border'>
 			<Table>
 				<TableHeader>
 					{table?.getHeaderGroups().map((headerGroup) => (
