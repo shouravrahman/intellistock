@@ -22,14 +22,14 @@ const Header = () => {
 					<History className='w-6 h-6 text-foreground' />
 				</button>
 				{/* search */}
-				<SearchInput />
+				<SearchInput className={"hidden md:block"} />
 			</div>
 
 			{/* right segment */}
 			<div className='flex items-center'>
 				{/* plus icon */}
 
-				<div className='has-tooltip pr-3 border-r border-gray-300'>
+				<div className=' hidden md:block has-tooltip pr-3 border-r border-gray-300'>
 					<button className='rounded-lg bg-violet-700 p-1 '>
 						<Link href='/dashboard/inventory/items/new'>
 							<Plus className='h-8 w-8 p-1 text-white' />
@@ -41,7 +41,7 @@ const Header = () => {
 				</div>
 
 				{/* 3 icons */}
-				<div className='flex justify-center gap-4 items-center pl-3'>
+				<div className=' hidden md:flex   justify-center gap-4 items-center pl-3'>
 					<div className='has-tooltip  '>
 						<span className='tooltip rounded shadow-lg py-1 px-2 bg-violet-900 text-foreground mt-10'>
 							Profile
@@ -70,7 +70,7 @@ const Header = () => {
 
 				{/* dropdown ,avatar,apps */}
 
-				<div className='flex gap-3 pl-3 items-center justify-center'>
+				<div className=' flex  gap-3 pl-3 items-center justify-center'>
 					{/* name dropdown */}
 					<button className='flex items-center text-foreground'>
 						<span>Mike</span>

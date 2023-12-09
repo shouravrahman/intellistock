@@ -3,16 +3,6 @@ import DataTable from "@/components/table/data-table";
 import { itemColumns } from "@/components/table/columns";
 import { getData } from "@/lib/data-access/getData";
 
-// async function getData() {
-// 	return [
-// 		{
-// 			id: "q8p4z7r2",
-// 			title: "Reiner",
-// 			description: "fiefuwff",
-// 		},
-// 	];
-// }
-
 const Items = async () => {
 	const data = await getData("items");
 	return (
