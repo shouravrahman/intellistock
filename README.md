@@ -1,10 +1,10 @@
 Welcome to Intellistock Inventory Management Web App — a comprehensive solution for efficiently creating and managing items, categories, brands, units, warehouses, and suppliers. Tailored to meet specific needs, our user-friendly interface empowers you to take control of your inventory effortlessly.
 
-![FancyWM_YVAwsZ9hhy](https://github.com/shouravrahman/intellistock/assets/73746355/dc8d6588-9789-4d0a-83e0-a4921740c16a)
-
-![FancyWM_il7lsMWhlo](https://github.com/shouravrahman/intellistock/assets/73746355/5aa84e96-abc5-47f5-8c86-b8513125c5c4)
-![FancyWM_uD1lnp0Tvf](https://github.com/shouravrahman/intellistock/assets/73746355/838b28b4-cb47-4ae5-b259-46f742ebfe4f)
-![FancyWM_ZyFWHqHaXp](https://github.com/shouravrahman/intellistock/assets/73746355/1870a675-1831-4c4b-be0a-bcdfe3ca0ac0)
+![FancyWM_SBRsbvC68u](https://github.com/shouravrahman/intellistock/assets/73746355/1e1e9680-8d7f-4f7a-85f8-204553e38fe2)
+![FancyWM_OuaTXuxxEy](https://github.com/shouravrahman/intellistock/assets/73746355/4bdb3410-b00f-44c4-bb4c-8f249244bacb)
+![FancyWM_Opy5fKzpW3](https://github.com/shouravrahman/intellistock/assets/73746355/ec062654-362f-451c-8e8e-0f8eb4d93c49)
+![FancyWM_T0WiheLzEl](https://github.com/shouravrahman/intellistock/assets/73746355/2c37a588-1e74-4343-8c71-79e3567d14a6)
+![FancyWM_gJKXQXWUp4](https://github.com/shouravrahman/intellistock/assets/73746355/8abe4aa5-e4db-4a57-9be6-aeacbf4e4ab0)
 
 ## Techonologies used:
 
