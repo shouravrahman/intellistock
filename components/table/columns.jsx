@@ -14,6 +14,7 @@ import {
 	Trash2,
 	Clipboard,
 } from "lucide-react";
+import Link from "next/link";
 
 export const itemColumns = [
 	{
@@ -174,8 +175,13 @@ export const categoryColumns = [
 						</DropdownMenuItem>
 						<DropdownMenuSeparator />
 						<DropdownMenuItem>
-							<Pencil className='w-4 h-4 mr-2' />
-							Edit
+							<Link
+								href={`/dashboard/inventory/category/update/${category.id}`}
+								className='flex'
+							>
+								<Pencil className='w-4 h-4 mr-2' />
+								Edit
+							</Link>
 						</DropdownMenuItem>
 						<DropdownMenuSeparator />
 						<DropdownMenuItem>
@@ -301,8 +307,13 @@ export const brandColumns = [
 						</DropdownMenuItem>
 						<DropdownMenuSeparator />
 						<DropdownMenuItem>
-							<Pencil className='w-4 h-4 mr-2' />
-							Edit
+							<Link
+								href={`/dashboard/inventory/brand/update/${brand.id}`}
+								className='flex'
+							>
+								<Pencil className='w-4 h-4 mr-2' />
+								Edit
+							</Link>
 						</DropdownMenuItem>
 						<DropdownMenuSeparator />
 						<DropdownMenuItem>
@@ -324,7 +335,7 @@ export const unitColumns = [
 					className='flex items-center justify-between'
 					onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
 				>
-					Brand Name
+					Unit Name
 					<ArrowUpDown className='ml-2 h-4 w-4' />
 				</button>
 			);
@@ -338,7 +349,7 @@ export const unitColumns = [
 					className='flex items-center justify-between'
 					onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
 				>
-					Brand Name
+					Unit Abbreviation
 					<ArrowUpDown className='ml-2 h-4 w-4' />
 				</button>
 			);
