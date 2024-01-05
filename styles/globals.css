@@ -14,7 +14,7 @@
 			98%
 		); /* Foreground text on primary color */
 		--color-border: hsla(180, 1%, 18%, 0.171); /* Border color */
-		--color-form: hsl(0, 23%, 92%); /* Form elements background */
+		--color-form: hsl(0, 0%, 100%); /* Form elements background */
 		--color-table: hsl(0, 0%, 100%); /* Table background */
 		--color-table-hover: hsl(210, 24%, 95%); /* Table hover background */
 		--color-card: hsl(0, 0%, 100%); /* Card background */
