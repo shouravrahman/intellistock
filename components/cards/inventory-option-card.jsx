@@ -13,12 +13,12 @@ const InventoryOptionCard = ({
 	img,
 }) => {
 	return (
-		<div className='shadow-lg text-foreground bg-form flex-center flex-col gap-4 p-6 rounded-lg '>
+		<div className='max-w-sm shadow-lg text-foreground bg-form flex-center flex-col gap-4 p-6 rounded-lg px-10'>
 			<h2 className='text-2xl font-semibold '>{title}</h2>
 			<div>
-				<Image className='' src={img} width={120} height={120} alt={title} />
+				<Image className='' src={img} width={60} height={60} alt={title} />
 			</div>
-			<p className='text-md font-medium'>{description}</p>
+			<p className='text-md font-medium text-center'>{description}</p>
 			{enabled ? (
 				<Link
 					href={href}
