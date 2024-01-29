@@ -1,3 +1,4 @@
+import { AlternateIcons } from "@/components/dashboard/sidebar/Icon";
 import {
 	BadgeDollarSign,
 	BaggageClaim,
@@ -18,6 +19,7 @@ import {
 	Undo2,
 	Users2,
 	Wallet,
+	Warehouse,
 } from "lucide-react";
 
 export const sidebarData = [
@@ -35,22 +37,33 @@ export const sidebarData = [
 			{
 				title: "Category",
 				href: "/dashboard/inventory/category",
-				icon: <Boxes />,
+				icon: (
+					<AlternateIcons
+						src='/category.png'
+						alt='unit'
+						width={25}
+						height={25}
+					/>
+				),
 			},
 			{
 				title: "Brand",
 				href: "/dashboard/inventory/brand",
-				icon: <Boxes />,
+				icon: (
+					<AlternateIcons src='/brand.png' alt='unit' width={25} height={25} />
+				),
 			},
 			{
 				title: "Unit",
 				href: "/dashboard/inventory/unit",
-				icon: <Boxes />,
+				icon: (
+					<AlternateIcons src='/unit.png' alt='unit' width={25} height={25} />
+				),
 			},
 			{
 				title: "Warehouse",
 				href: "/dashboard/inventory/warehouse",
-				icon: <Boxes />,
+				icon: <Warehouse />,
 			},
 			{
 				title: "Supplier",
