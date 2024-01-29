@@ -1,7 +1,7 @@
 import { create } from "zustand";
 
 const useSidebarState = create((set) => ({
-	open: false,
+	open: true,
 	setOpen: (newOpen) => set({ open: newOpen }),
 }));
 
