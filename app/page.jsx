@@ -48,12 +48,8 @@ export default function Home() {
 							Invoice Express provides a simple and efficient way to manage all
 							your invoices. Save time, stay organized, and get paid faster.
 						</p>
-						<Button
-							className='mt-8 px-8 py-6 text-xl'
-							variant='secondary'
-							href='/signup'
-						>
-							Get Started
+						<Button className='mt-8 px-8 py-6 text-xl' variant='secondary'>
+							<Link href='/dashboard/home/overview'>Get Started</Link>
 						</Button>
 						<Image
 							src='/hero-dash.png'
