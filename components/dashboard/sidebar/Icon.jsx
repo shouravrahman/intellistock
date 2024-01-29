@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import Image from "next/image";
 import Link from "next/link";
 
 const Icon = ({ icon, className, href }) => (
@@ -8,3 +9,18 @@ const Icon = ({ icon, className, href }) => (
 );
 
 export default Icon;
+
+export const AlternateIcons = ({ src, alt, width, height }) => {
+	return (
+		<Image
+			className=''
+			layout='fixed'
+			objectFit='cover'
+			objectPosition='center'
+			width={width}
+			height={height}
+			src={src}
+			alt={alt}
+		/>
+	);
+};
