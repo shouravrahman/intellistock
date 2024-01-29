@@ -110,8 +110,13 @@ export const itemColumns = [
 						</DropdownMenuItem>
 						<DropdownMenuSeparator />
 						<DropdownMenuItem>
-							<Pencil className='w-4 h-4 mr-2' />
-							Edit
+							<Link
+								href={`/dashboard/inventory/items/update/${Item.id}`}
+								className='flex'
+							>
+								<Pencil className='w-4 h-4 mr-2' />
+								Edit
+							</Link>
 						</DropdownMenuItem>
 						<DropdownMenuSeparator />
 						<DropdownMenuItem>
@@ -255,8 +260,13 @@ export const supplierColumns = [
 						</DropdownMenuItem>
 						<DropdownMenuSeparator />
 						<DropdownMenuItem>
-							<Pencil className='w-4 h-4 mr-2' />
-							Edit
+							<Link
+								href={`/dashboard/inventory/supplier/update/${supplier?.id}`}
+								className='flex'
+							>
+								<Pencil className='w-4 h-4 mr-2' />
+								Edit
+							</Link>
 						</DropdownMenuItem>
 						<DropdownMenuSeparator />
 						<DropdownMenuItem>
@@ -377,8 +387,13 @@ export const unitColumns = [
 						</DropdownMenuItem>
 						<DropdownMenuSeparator />
 						<DropdownMenuItem>
-							<Pencil className='w-4 h-4 mr-2' />
-							Edit
+							<Link
+								href={`/dashboard/inventory/unit/update/${unit?.id}`}
+								className='flex'
+							>
+								<Pencil className='w-4 h-4 mr-2' />
+								Edit
+							</Link>
 						</DropdownMenuItem>
 						<DropdownMenuSeparator />
 						<DropdownMenuItem>
